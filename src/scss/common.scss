@@ -86,7 +86,6 @@ summary {
 		border-radius: toRem(3);
 		transition: background-color 0.3s;
 		svg {
-			width: toRem(18);
 			path {
 				transition: stroke 0.3s;
 			}
@@ -97,17 +96,20 @@ summary {
 				display: none;
 			}
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: rgba($orangeColor, 1);
-				svg {
-					path {
-						stroke: #fff;
+		@media (min-width: $mobile) {
+			svg {
+				width: toRem(18);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: rgba($orangeColor, 1);
+					svg {
+						path {
+							stroke: #fff;
+						}
 					}
 				}
 			}
-		}
-		@media (min-width: $mobile) {
 			&.search-button {
 				background-color: rgba($orangeColor, 1);
 				svg {

@@ -345,9 +345,6 @@ summary::marker {
   border-radius: .1875rem;
   transition: background-color .3s
 }
-.search__button svg {
-  width: 1.125rem
-}
 .search__button svg path {
   transition: stroke .3s
 }
@@ -438,6 +435,9 @@ summary::marker {
     width: 11.875rem;
     visibility: visible
   }
+  .search__button svg {
+    width: 1.125rem
+  }
   .search__button.search-button {
     background-color: #f36e22
   }
@@ -459,6 +459,12 @@ summary::marker {
   .spollers-menu__item:hover .spollers-menu__inner {
     opacity: 1;
     visibility: visible
+  }
+  .search__button:hover {
+    background-color: #f36e22
+  }
+  .search__button:hover svg path {
+    stroke: #fff
   }
 }
 @media (min-width:83.125em) {
@@ -719,12 +725,6 @@ summary::marker {
   }
   .spollers-menu__link:hover {
     background-color: #f36e22
-  }
-  .search__button:hover {
-    background-color: #f36e22
-  }
-  .search__button:hover svg path {
-    stroke: #fff
   }
   .header__logo:hover img {
     -webkit-filter: grayscale(1);
