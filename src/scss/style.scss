@@ -166,12 +166,8 @@ body {
 // ========================================================================================================================================================
 .hero {
 	font-size: toRem(50);
-	a {
-		color: blueviolet;
-		@media (any-hover: hover) {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
+	// .hero__container
+	&__container {
+		color: blue;
 	}
 }

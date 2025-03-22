@@ -403,8 +403,8 @@ summary::marker {
 .hero {
   font-size: 3.125rem
 }
-.hero a {
-  color: #8a2be2
+.hero__container {
+  color: #00f
 }
 @media (min-width:47.99875em) {
   .menu {
@@ -735,8 +735,5 @@ summary::marker {
   }
   .actions-header__phone:hover .actions-header__phone-icon svg path {
     fill: #0066b3
-  }
-  .hero a:hover {
-    text-decoration: underline
   }
 }
