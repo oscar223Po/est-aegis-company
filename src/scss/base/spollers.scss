@@ -1,0 +1,222 @@
+// Custom Spollers
+.spollers {
+	display: grid;
+	gap: 15px;
+}
+// Спойлер
+.spollers__item {
+	font-size: toRem(20);
+}
+// Заголовок спойлера
+.spollers__title {
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	border: 1px solid #eee;
+	padding: toRem(10) toRem(15);
+	border-radius: toRem(5);
+	position: relative;
+	list-style: none;
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+	}
+	._spoller-init & {
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			background-color: #000;
+			height: 2px;
+			width: 15px;
+			transition: transform 0.5s ease 0s;
+		}
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg);
+		}
+		&::after {
+			transform: translate(0, -50%) rotate(-40deg);
+		}
+		&._spoller-active {
+			&::before {
+				transform: translateX(-75%) rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		/*
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: toRem(12);
+				height: toRem(1);
+				transition: all 0.3s ease 0s;
+				width: toRem(10);
+				background-color: #000;
+			}
+			&::before {
+				transform: rotate(40deg);
+				right: toRem(7);
+			}
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		*/
+	}
+}
+// Контент спойлера
+.spollers__body {
+	padding: toRem(20);
+	border-radius: toRem(5);
+	border: 1px solid #eee;
+}
+// ========================================================================================================================================================
+// Menu Spollers
+.spollers-menu {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: toRem(15);
+	column-gap: toRem(20);
+	@media (max-width: $mobile) {
+		row-gap: toRem(0);
+		column-gap: toRem(0);
+		flex-direction: column;
+	}
+	// .spollers-menu__item
+	&__item {
+		position: relative;
+		@media (min-width: $mobile) {
+			@media (any-hover: hover) {
+				&:hover {
+					.spollers-menu__title {
+						a {
+							color: $blueColor;
+							svg {
+								transform: rotate(-180deg) translate(0px, 1.3px);
+								path {
+									stroke: $blueColor;
+								}
+							}
+						}
+					}
+					.spollers-menu__inner {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+	// .spollers-menu__title
+	&__title {
+		color: #363b41;
+		font-weight: 700;
+		line-height: 138%;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		a {
+			display: flex;
+			align-items: center;
+			column-gap: toRem(7);
+			transition: color 0.3s;
+			svg {
+				transition: transform 0.3s;
+				path {
+					stroke: #363b41;
+					transition: stroke 0.3s;
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			color: #fff;
+			padding: toRem(10) toRem(0);
+			&._spoller-active {
+				a {
+					svg {
+						transform: rotate(-180deg);
+					}
+				}
+			}
+			a {
+				pointer-events: none;
+				justify-content: space-between;
+				svg {
+					path {
+						stroke: #fff;
+					}
+				}
+			}
+			&.title-link-sp {
+				a {
+					pointer-events: visible;
+				}
+			}
+		}
+	}
+	// .spollers-menu__inner
+	&__inner {
+		@media (min-width: $mobile) {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			padding-top: toRem(15);
+			transition:
+				opacity 0.3s,
+				visibility 0.3s;
+		}
+	}
+	// .spollers-menu__list
+	&__list {
+		@media (min-width: $mobile) {
+			border-radius: toRem(5);
+			background-color: #363b41;
+			padding: toRem(12) toRem(10);
+			box-shadow:
+				rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+				rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		}
+		@media (max-width: $mobile) {
+			padding-bottom: toRem(5);
+		}
+	}
+	// .spollers-menu__link
+	&__link {
+		color: #fff;
+		width: 100%;
+		font-weight: 700;
+		line-height: 135%;
+		white-space: nowrap;
+		font-size: toRem(15);
+		border-radius: toRem(5);
+		padding: toRem(8) toRem(8);
+		transition: background-color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $orangeColor;
+			}
+		}
+		@media (max-width: $mobile) {
+			white-space: wrap;
+			padding: toRem(5) toRem(10);
+		}
+	}
+}

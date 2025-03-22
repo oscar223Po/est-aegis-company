@@ -1,0 +1,121 @@
+//========================================================================================================================================================
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+::-webkit-scrollbar {
+	width: toRem(1);
+	border-radius: toRem(10);
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #fff;
+	border-radius: toRem(10);
+}
+::selection {
+	background-color: rgba(#a60101, 0.5);
+}
+summary {
+	list-style: none;
+	&::marker {
+		display: none;
+	}
+}
+@supports (-webkit-appearance: none) {
+	summary::-webkit-details-marker {
+		display: none;
+	}
+}
+//========================================================================================================================================================
+// Search
+.search {
+	display: flex;
+	position: relative;
+	align-items: center;
+	// .search__label
+	&__label {
+		right: 0;
+		width: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		visibility: hidden;
+		border: 1px solid #222;
+		border-radius: toRem(3);
+		transition:
+			opacity 0.3s,
+			width 0.3s,
+			visibility 0.3s;
+		input {
+			width: 100%;
+			outline: none;
+			min-height: toRem(32);
+			padding-left: toRem(10);
+			padding-right: toRem(35);
+			background-color: #fff;
+			&::placeholder {
+				transition: opacity 0.3s;
+			}
+			&:focus {
+				&::placeholder {
+					opacity: 0;
+				}
+			}
+		}
+		@media (min-width: $mobile) {
+			&.search-label {
+				opacity: 1;
+				width: toRem(190);
+				visibility: visible;
+			}
+		}
+		@media (max-width: $mobile) {
+			opacity: 1;
+			width: 100%;
+			border: none;
+			position: relative;
+			visibility: visible;
+		}
+	}
+	// .search__button
+	&__button {
+		display: flex;
+		width: toRem(32);
+		height: toRem(32);
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		border-radius: toRem(3);
+		transition: background-color 0.3s;
+		svg {
+			width: toRem(18);
+			path {
+				transition: stroke 0.3s;
+			}
+		}
+		&.icon-menu {
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($orangeColor, 1);
+				svg {
+					path {
+						stroke: #fff;
+					}
+				}
+			}
+		}
+		@media (min-width: $mobile) {
+			&.search-button {
+				background-color: rgba($orangeColor, 1);
+				svg {
+					path {
+						stroke: #fff;
+					}
+				}
+			}
+		}
+	}
+}

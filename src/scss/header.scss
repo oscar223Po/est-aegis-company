@@ -1,0 +1,122 @@
+// Header
+.header {
+	padding-top: toRem(20);
+	background-color: #fff;
+	padding-bottom: toRem(15);
+	box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.15);
+	@media (max-width: toEm(1024)) {
+		padding-top: toRem(17);
+	}
+	// .header__body
+	&__body {
+		@include adaptiveValue("padding-left", 35, 15, 0, 1920, 320);
+		@include adaptiveValue("padding-right", 35, 15, 0, 1920, 320);
+		@media (min-width: toEm(1024)) {
+			display: flex;
+			align-items: center;
+			column-gap: toRem(25);
+			justify-content: space-between;
+		}
+	}
+	// .header__logo
+	&__logo {
+		flex-shrink: 0;
+		z-index: 1;
+		position: relative;
+		@include adaptiveValue("max-width", 360, 260, 2, 1920, 767.98);
+		img {
+			width: 100%;
+			height: 100%;
+			transition: filter 0.3s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					filter: grayscale(1);
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			@include adaptiveValue("max-width", 260, 160, 0, 767.98, 320);
+		}
+	}
+	// .header__aside
+	&__aside {
+	}
+	// .header__actions
+	&__actions {
+	}
+	// .header__menu
+	&__menu {
+	}
+}
+.actions-header {
+	z-index: 1;
+	position: relative;
+	&:not(:last-child) {
+		margin-bottom: toRem(20);
+	}
+	@media (max-width: toEm(1024)) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	@media (max-width: $mobile) {
+		&:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+	// .actions-header__logo
+	&__logo {
+		@media (min-width: toEm(1024)) {
+			display: none;
+		}
+	}
+	// .actions-header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		@include adaptiveValue("gap", 12, 8);
+	}
+	// .actions-header__phone
+	&__phone {
+		display: flex;
+		align-items: center;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blueColor;
+				.actions-header__phone-icon {
+					svg {
+						path {
+							fill: $blueColor;
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			margin-right: toRem(5);
+			span {
+				display: none;
+			}
+		}
+	}
+	// .actions-header__phone-icon
+	&__phone-icon {
+		display: flex;
+		width: toRem(32);
+		height: toRem(32);
+		align-items: center;
+		justify-content: center;
+		svg {
+			path {
+				transition: fill 0.3s;
+			}
+		}
+	}
+}
