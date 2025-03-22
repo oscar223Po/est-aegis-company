@@ -42,15 +42,6 @@
 			@include adaptiveValue("max-width", 260, 160, 0, 767.98, 320);
 		}
 	}
-	// .header__aside
-	&__aside {
-	}
-	// .header__actions
-	&__actions {
-	}
-	// .header__menu
-	&__menu {
-	}
 }
 .actions-header {
 	z-index: 1;

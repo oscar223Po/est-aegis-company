@@ -124,3 +124,33 @@ summary {
 		}
 	}
 }
+// Heading
+.heading {
+	// .heading--center
+	&--center {
+		text-align: center;
+		.heading__text {
+			margin: 0 auto;
+		}
+	}
+	// .heading__title
+	&__title {
+		color: #000;
+		font-weight: 700;
+		line-height: 125%;
+		letter-spacing: -0.01em;
+		@include adaptiveValue("font-size", 58, 26);
+		&:not(:last-child) {
+			margin-bottom: toRem(18);
+			@include adaptiveValue("margin-bottom", 18, 8);
+		}
+	}
+	// .heading__text
+	&__text {
+		color: #000;
+		line-height: 177%;
+		max-width: toRem(620);
+		letter-spacing: 0.02em;
+		@include adaptiveValue("font-size", 14, 12);
+	}
+}
