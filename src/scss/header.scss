@@ -9,6 +9,8 @@
 	}
 	// .header__body
 	&__body {
+		margin: 0 auto;
+		max-width: toRem(1920);
 		@include adaptiveValue("padding-left", 35, 15, 0, 1920, 320);
 		@include adaptiveValue("padding-right", 35, 15, 0, 1920, 320);
 		@media (min-width: toEm(1024)) {
@@ -20,8 +22,8 @@
 	}
 	// .header__logo
 	&__logo {
-		flex-shrink: 0;
 		z-index: 1;
+		flex-shrink: 0;
 		position: relative;
 		@include adaptiveValue("max-width", 360, 260, 2, 1920, 767.98);
 		img {

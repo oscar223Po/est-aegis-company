@@ -73,6 +73,9 @@ summary {
 			border: none;
 			position: relative;
 			visibility: visible;
+			input {
+				padding-right: toRem(15);
+			}
 		}
 	}
 	// .search__button

@@ -358,9 +358,13 @@ summary::marker {
   padding-bottom: .9375rem;
   box-shadow: 0 5px 5px -2px rgba(0,0,0,.15)
 }
+.header__body {
+  margin: 0 auto;
+  max-width: 120rem
+}
 .header__logo {
-  flex-shrink: 0;
   z-index: 1;
+  flex-shrink: 0;
   position: relative
 }
 .header__logo img {
@@ -396,6 +400,98 @@ summary::marker {
 }
 .actions-header__phone-icon svg path {
   transition: fill .3s
+}
+.footer {
+  background: #0066b3 url(../img/footer-bg.webp) center bottom/cover no-repeat
+}
+.footer__main {
+  display: flex;
+  justify-content: space-between
+}
+.aside-footer {
+  flex-shrink: 0
+}
+.aside-footer__logo {
+  flex-shrink: 0;
+  transition: opacity .3s
+}
+.aside-footer__item {
+  color: #fff;
+  font-weight: 700;
+  line-height: 188%;
+  letter-spacing: .03em
+}
+.spollers-footer {
+  display: flex
+}
+.spollers-footer__title {
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  line-height: 178%;
+  align-items: center;
+  letter-spacing: .02em;
+  justify-content: space-between
+}
+.spollers-footer__title svg {
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s,-webkit-transform .3s
+}
+.spollers-footer__title._spoller-active svg {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg)
+}
+.spollers-footer__link {
+  color: #fff;
+  line-height: 190%;
+  letter-spacing: .03em
+}
+.bottom-footer {
+  display: flex;
+  gap: .9375rem;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+  background-color: #333;
+  padding: 1.25rem 0;
+  justify-content: space-between
+}
+.bottom-footer::after,
+.bottom-footer::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+  background-color: #333
+}
+.bottom-footer::before {
+  left: -300%
+}
+.bottom-footer::after {
+  right: -300%
+}
+.bottom-footer__label {
+  color: #fff;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: .02em
+}
+.bottom-footer__list {
+  gap: .5rem;
+  display: flex;
+  flex-wrap: wrap
+}
+.bottom-footer__list li:not(:last-child) {
+  padding-right: .5rem;
+  border-right: 1.5px solid #fff
+}
+.bottom-footer__link {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .02em;
+  transition: color .3s
 }
 .hero {
   font-size: 3.125rem
@@ -444,6 +540,12 @@ summary::marker {
   .search__button.search-button svg path {
     stroke: #fff
   }
+  .spollers-footer__title:not(:last-child) {
+    margin-bottom: .5rem
+  }
+  .spollers-footer__title svg {
+    display: none
+  }
 }
 @media (min-width:47.99875em)and (any-hover:hover) {
   .spollers-menu__item:hover .spollers-menu__title a {
@@ -471,6 +573,18 @@ summary::marker {
   .actions-header__body {
     gap: .75rem
   }
+  .footer {
+    padding-top: 4.0625rem
+  }
+  .footer__main {
+    gap: 1.875rem
+  }
+  .footer__main {
+    padding-bottom: 4.0625rem
+  }
+  .spollers-footer__title {
+    font-size: 1.25rem
+  }
 }
 @media (min-width:64em) {
   .header__body {
@@ -484,6 +598,9 @@ summary::marker {
   .actions-header__logo {
     display: none
   }
+  .aside-footer__logo:not(:last-child) {
+    margin-bottom: 1.5625rem
+  }
 }
 @media (min-width:120em) {
   .header__body {
@@ -494,6 +611,14 @@ summary::marker {
   }
   .header__logo {
     max-width: 22.5rem
+  }
+  .spollers-footer {
+    gap: 5rem
+  }
+}
+@media (max-width:160em) {
+  .footer {
+    background: #0066b3 url(../img/footer-bg.webp) center bottom/contain no-repeat
   }
 }
 @media (max-width:64em) {
@@ -516,6 +641,26 @@ summary::marker {
   .actions-header:not(:last-child) {
     margin-bottom: .9375rem
   }
+  .footer__main {
+    flex-direction: column
+  }
+  .aside-footer {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center
+  }
+  .aside-footer__contact {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: .1875rem;
+    -webkit-column-gap: .9375rem;
+    -moz-column-gap: .9375rem;
+    column-gap: .9375rem;
+    justify-content: flex-end
+  }
+  .spollers-footer {
+    justify-content: space-between
+  }
 }
 @media (max-width:20em) {
   .header__body {
@@ -526,6 +671,23 @@ summary::marker {
   }
   .actions-header__body {
     gap: .5rem
+  }
+  .footer {
+    padding-top: 1.75rem
+  }
+  .footer__main {
+    gap: .625rem
+  }
+  .footer__main {
+    padding-bottom: 1.5625rem
+  }
+  .spollers-footer__title {
+    font-size: 1rem
+  }
+}
+@media (max-width:61.99875em) {
+  .footer {
+    background: #0066b3 url(../img/footer-bg.webp) left bottom/cover no-repeat
   }
 }
 @media (max-width:47.99875em) {
@@ -649,6 +811,9 @@ summary::marker {
     position: relative;
     visibility: visible
   }
+  .search__label input {
+    padding-right: .9375rem
+  }
   .actions-header:not(:last-child) {
     margin-bottom: 0
   }
@@ -657,6 +822,32 @@ summary::marker {
   }
   .actions-header__phone span {
     display: none
+  }
+  .aside-footer {
+    align-items: start;
+    flex-direction: column
+  }
+  .aside-footer__logo img {
+    max-width: 100%
+  }
+  .aside-footer__contact {
+    flex-direction: column
+  }
+  .spollers-footer {
+    flex-direction: column
+  }
+  .spollers-footer__item {
+    padding: .625rem 0
+  }
+  .spollers-footer__item:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,.5)
+  }
+  .spollers-footer__title {
+    padding-right: .25rem
+  }
+  .spollers-footer__list {
+    padding-top: .3125rem;
+    padding-bottom: .25rem
   }
 }
 @media (max-width:47.99875em)and (max-width:20em) {
@@ -713,10 +904,25 @@ summary::marker {
   .header__logo {
     max-width: clamp(16.25rem ,12.0835141751rem + 8.6804048541vw ,22.5rem)
   }
+  .spollers-footer {
+    gap: clamp(1.25rem ,-1.2498914949rem + 5.2082429124vw ,5rem)
+  }
 }
 @media (min-width:20em)and (max-width:83.125em) {
   .actions-header__body {
     gap: clamp(.5rem ,.4207920792rem + .396039604vw ,.75rem)
+  }
+  .footer {
+    padding-top: clamp(1.75rem ,1.0173267327rem + 3.6633663366vw ,4.0625rem)
+  }
+  .footer__main {
+    gap: clamp(.625rem ,.228960396rem + 1.9801980198vw ,1.875rem)
+  }
+  .footer__main {
+    padding-bottom: clamp(1.5625rem ,.7704207921rem + 3.9603960396vw ,4.0625rem)
+  }
+  .spollers-footer__title {
+    font-size: clamp(1rem ,.9207920792rem + .396039604vw ,1.25rem)
   }
 }
 @media (any-hover:hover) {
@@ -735,5 +941,17 @@ summary::marker {
   }
   .actions-header__phone:hover .actions-header__phone-icon svg path {
     fill: #0066b3
+  }
+  .aside-footer__logo:hover {
+    opacity: .75
+  }
+  .aside-footer__item a:hover {
+    text-decoration: underline
+  }
+  .spollers-footer__link:hover {
+    text-decoration: underline
+  }
+  .bottom-footer__link:hover {
+    color: #f36e22
   }
 }

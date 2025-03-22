@@ -1,1 +1,215 @@
 // Footer
+.footer {
+	background: $blueColor url("@img/footer-bg.png") center bottom / cover no-repeat;
+	@include adaptiveValue("padding-top", 65, 28);
+	@media (max-width: toEm(2560)) {
+		background: $blueColor url("@img/footer-bg.png") center bottom / contain no-repeat;
+	}
+	@media (max-width: $tablet) {
+		background: $blueColor url("@img/footer-bg.png") left bottom / cover no-repeat;
+	}
+	// .footer__container
+	&__container {
+	}
+	// .footer__main
+	&__main {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 30, 10);
+		@include adaptiveValue("padding-bottom", 65, 25);
+		@media (max-width: toEm(1024)) {
+			flex-direction: column;
+		}
+	}
+	// .footer__aside
+	&__aside {
+	}
+	// .footer__spollers
+	&__spollers {
+	}
+	// .footer__bottom
+	&__bottom {
+	}
+}
+.aside-footer {
+	flex-shrink: 0;
+	@media (max-width: toEm(1024)) {
+		display: flex;
+		gap: toRem(20);
+		align-items: center;
+	}
+	@media (max-width: $mobile) {
+		align-items: start;
+		flex-direction: column;
+	}
+	// .aside-footer__logo
+	&__logo {
+		flex-shrink: 0;
+		transition: opacity 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+		@media (min-width: toEm(1024)) {
+			&:not(:last-child) {
+				margin-bottom: toRem(25);
+			}
+		}
+		@media (max-width: $mobile) {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	// .aside-footer__contact
+	&__contact {
+		@media (max-width: toEm(1024)) {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: toRem(3);
+			column-gap: toRem(15);
+			justify-content: flex-end;
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+	// .aside-footer__item
+	&__item {
+		color: #fff;
+		font-weight: 700;
+		line-height: 188%;
+		letter-spacing: 0.03em;
+		a {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.spollers-footer {
+	display: flex;
+	@include adaptiveValue("gap", 80, 20, 2, 1920, 767.98);
+	@media (max-width: toEm(1024)) {
+		justify-content: space-between;
+	}
+	@media (max-width: $mobile) {
+		flex-direction: column;
+	}
+	// .spollers-footer__item
+	&__item {
+		@media (max-width: $mobile) {
+			padding: toRem(10) toRem(0);
+			&:not(:last-child) {
+				border-bottom: 1px solid rgba(#fff, 0.5);
+			}
+		}
+	}
+	// .spollers-footer__title
+	&__title {
+		color: #fff;
+		display: flex;
+		font-weight: 700;
+		line-height: 178%;
+		align-items: center;
+		letter-spacing: 0.02em;
+		justify-content: space-between;
+		@include adaptiveValue("font-size", 20, 16);
+		svg {
+			transition: transform 0.3s;
+		}
+		&._spoller-active {
+			svg {
+				transform: rotate(-180deg);
+			}
+		}
+		@media (min-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(8);
+			}
+			svg {
+				display: none;
+			}
+		}
+		@media (max-width: $mobile) {
+			padding-right: toRem(4);
+		}
+	}
+	// .spollers-footer__list
+	&__list {
+		@media (max-width: $mobile) {
+			padding-top: toRem(5);
+			padding-bottom: toRem(4);
+		}
+	}
+	// .spollers-footer__link
+	&__link {
+		color: #fff;
+		line-height: 190%;
+		letter-spacing: 0.03em;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.bottom-footer {
+	display: flex;
+	gap: toRem(15);
+	flex-wrap: wrap;
+	position: relative;
+	align-items: center;
+	background-color: #333333;
+	padding: toRem(20) toRem(0);
+	justify-content: space-between;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 300%;
+		height: 100%;
+		top: 0;
+		background-color: #333333;
+	}
+	&::before {
+		left: -300%;
+	}
+	&::after {
+		right: -300%;
+	}
+	// .bottom-footer__label
+	&__label {
+		color: #fff;
+		font-weight: 700;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+	}
+	// .bottom-footer__list
+	&__list {
+		gap: toRem(8);
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			&:not(:last-child) {
+				padding-right: toRem(8);
+				border-right: 1.5px solid #fff;
+			}
+		}
+	}
+	// .bottom-footer__link
+	&__link {
+		color: #fff;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+	}
+}
