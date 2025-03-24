@@ -597,17 +597,6 @@ summary::marker {
   -webkit-transform: translate(0,.5px);
   transform: translate(0,.5px)
 }
-.example {
-  background-color: orange
-}
-.example__body {
-  opacity: 0;
-  line-height: 125%;
-  font-size: 3.125rem
-}
-.example__body span {
-  color: #00f
-}
 @media (min-width:29.99875em) {
   .asset__items {
     grid-template-columns: repeat(auto-fill,minmax(16.875rem,1fr))
@@ -1215,8 +1204,5 @@ summary::marker {
   .item-asset:hover {
     background-color: #f5f7fa;
     box-shadow: rgba(149,157,165,.1) 0 8px 24px
-  }
-  .example:hover .example__body {
-    opacity: 1
   }
 }

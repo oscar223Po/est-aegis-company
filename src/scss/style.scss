@@ -166,22 +166,4 @@ body {
 // Підключення стилів окремих сторінок
 @import "home";
 // ========================================================================================================================================================
-.example {
-	background-color: orange;
-	@media (any-hover: hover) {
-		&:hover {
-			.example__body {
-				opacity: 1;
-			}
-		}
-	}
-	// .example__body
-	&__body {
-		opacity: 0;
-		line-height: 125%;
-		font-size: toRem(50);
-		span {
-			color: blue;
-		}
-	}
-}
+
