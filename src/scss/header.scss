@@ -1,5 +1,7 @@
 // Header
 .header {
+	z-index: 10;
+	position: relative;
 	padding-top: toRem(20);
 	background-color: #fff;
 	padding-bottom: toRem(15);

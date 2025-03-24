@@ -126,6 +126,9 @@ summary {
 }
 // Heading
 .heading {
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 55, 25);
+	}
 	// .heading--center
 	&--center {
 		text-align: center;

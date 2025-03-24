@@ -36,10 +36,10 @@ $minWidth: 320;
 // Ширина полотна (макету)
 $maxWidth: 1920;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1300;
+$maxWidthContainer: 1360;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
+$containerPadding: 10;
 
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -112,7 +112,9 @@ body {
 		}
 		@if ($containerPadding>0) {
 			@if ($maxWidthContainer>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
+				// padding: 0 toRem(math.div($containerPadding, 2));
+				@include adaptiveValue("padding-left", 35, 15);
+				@include adaptiveValue("padding-right", 35, 15);
 			} @else {
 				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
 				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
@@ -164,10 +166,22 @@ body {
 // Підключення стилів окремих сторінок
 @import "home";
 // ========================================================================================================================================================
-.hero {
-	font-size: toRem(50);
-	// .hero__container
-	&__container {
-		color: blue;
+.example {
+	background-color: orange;
+	@media (any-hover: hover) {
+		&:hover {
+			.example__body {
+				opacity: 1;
+			}
+		}
+	}
+	// .example__body
+	&__body {
+		opacity: 0;
+		line-height: 125%;
+		font-size: toRem(50);
+		span {
+			color: blue;
+		}
 	}
 }
