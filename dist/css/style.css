@@ -1134,8 +1134,14 @@ summary::marker {
 .about__body.custom {
   align-items: normal
 }
+.about__image {
+  box-shadow: rgba(240,46,170,.4) 5px 5px,rgba(240,46,170,.3) 10px 10px,rgba(240,46,170,.2) 15px 15px,rgba(240,46,170,.1) 20px 20px,rgba(240,46,170,.05) 25px 25px
+}
 .about__articles .articles__title {
   text-transform: uppercase
+}
+.garanty__image {
+  box-shadow: rgba(240,46,170,.4) 5px 5px,rgba(240,46,170,.3) 10px 10px,rgba(240,46,170,.2) 15px 15px,rgba(240,46,170,.1) 20px 20px,rgba(240,46,170,.05) 25px 25px
 }
 .usage__articles.articles .articles__title {
   text-transform: uppercase
