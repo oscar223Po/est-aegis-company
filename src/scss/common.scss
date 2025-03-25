@@ -163,12 +163,33 @@ summary {
 		@include adaptiveValue("margin-top", -10, 0);
 	}
 }
+// Title
+.title {
+	font-weight: 700;
+	line-height: 115%;
+	@include adaptiveValue("font-size", 35, 18);
+}
 // Image
 .img {
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		transition: transform 0.3s;
+	}
+	&--brshad {
+		overflow: hidden;
+		border-radius: toRem(15);
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
 	}
 }
 // Slider Atributes
@@ -218,4 +239,181 @@ summary {
 	.swiper-pagination-bullet-active {
 		background-color: #0066b3;
 	}
+}
+// Breadcrumbs
+.breadcrumbs {
+	@include adaptiveValue("margin-top", 25, 20);
+	@include adaptiveValue("margin-bottom", 25, 20);
+	// .breadcrumbs__container
+	&__container {
+	}
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+		gap: toRem(8);
+		flex-wrap: wrap;
+	}
+	// .breadcrumbs__item
+	&__item {
+		display: flex;
+		gap: toRem(8);
+		font-weight: 700;
+		align-items: center;
+		@include adaptiveValue("font-size", 16, 14);
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				width: toRem(5);
+				height: toRem(5);
+				border-radius: 50%;
+				background-color: $blueColor;
+			}
+		}
+	}
+	// .breadcrumbs__link
+	&__link {
+		color: $blueColor;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	// .breadcrumbs__current
+	&__current {
+	}
+}
+// Paragraph
+.paragraph {
+	display: grid;
+	@include adaptiveValue("row-gap", 25, 17);
+	// .paragraph__block
+	&__block {
+		display: grid;
+		@include adaptiveValue("row-gap", 15, 8);
+		h4 {
+			font-weight: 700;
+			line-height: 125%;
+			@include adaptiveValue("font-size", 30, 16);
+		}
+		h5 {
+			font-weight: 500;
+			line-height: 115%;
+			@include adaptiveValue("font-size", 25, 14);
+		}
+		p {
+			line-height: 135%;
+			@include adaptiveValue("font-size", 19, 12);
+			a {
+				color: $blueColor;
+				@media (any-hover: hover) {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		ul {
+			display: grid;
+			gap: toRem(8);
+			padding-left: toRem(20);
+			li {
+				list-style: disc;
+				line-height: 135%;
+				@include adaptiveValue("font-size", 16, 12);
+				span {
+					font-weight: 700;
+				}
+				a {
+					color: $blueColor;
+					@media (any-hover: hover) {
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// Articles
+.articles {
+	display: grid;
+	@include adaptiveValue("gap", 30, 15);
+	@media (min-width: $mobileSmall) {
+		grid-template-columns: repeat(auto-fit, minmax(toRem(220), 1fr));
+	}
+	&--flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		@include adaptiveValue("gap", 25, 15);
+		.articles__item {
+			max-width: toRem(235);
+		}
+	}
+	// .articles__item
+	&__item {
+		padding: toRem(15);
+		text-align: center;
+		background-color: #f5f7fa;
+		transition:
+			background-color 0.3s,
+			box-shadow 0.3s;
+		border: 1px solid rgba(#333333, 0.75);
+		box-shadow:
+			rgba(0, 0, 0, 0.05) 0px 4px 6px -1px,
+			rgba(0, 0, 0, 0.05) 0px 2px 4px -1px;
+		@include adaptiveValue("border-radius", 14, 10);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($blueColor, 0.85);
+				box-shadow: rgba(38, 57, 77, 0.75) 0px 20px 30px -10px;
+				.articles__title,
+				.articles__text {
+					color: #fff;
+				}
+			}
+		}
+	}
+	// .articles__image
+	&__image {
+		overflow: hidden;
+		border-radius: toRem(10);
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .articles__title
+	&__title {
+		font-weight: 700;
+		line-height: 135%;
+		transition: color 0.3s;
+		@include adaptiveValue("font-size", 17, 14);
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	// .articles__text
+	&__text {
+		line-height: 125%;
+		transition: color 0.3s;
+		@include adaptiveValue("font-size", 17, 12);
+	}
+}
+// Custom
+.custom {
+	display: grid;
+	align-items: start;
+	@include adaptiveValue("gap", 30, 20);
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 60, 40);
+	}
+	@media (min-width: $mobile) {
+		grid-template-columns: 63.076923% auto;
+	}
+}
+// Option
+.option-pd {
+	@include adaptiveValue("padding-bottom", 80, 35);
 }

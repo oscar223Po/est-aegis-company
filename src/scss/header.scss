@@ -1,7 +1,10 @@
 // Header
 .header {
+	top: 0;
+	left: 0;
 	z-index: 10;
-	position: relative;
+	width: 100%;
+	position: fixed;
 	padding-top: toRem(20);
 	background-color: #fff;
 	padding-bottom: toRem(15);

@@ -26,4 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			searchButton.classList.toggle("search-button");
 		})
 	}
+	// Header Compence Height
+	function updatePadding() {
+		const header = document.querySelector('.header');
+		const content = document.querySelector('.page');
+		if (header && content) {
+			content.style.paddingTop = `${header.offsetHeight}px`;
+		}
+	}
+	window.addEventListener('load', updatePadding);
+	window.addEventListener('resize', updatePadding);
 });

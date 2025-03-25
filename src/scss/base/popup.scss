@@ -31,6 +31,25 @@ body::after {
 	overflow: auto;
 	pointer-events: auto;
 }
+.popup__close {
+	top: 0;
+	right: 0;
+	display: flex;
+	width: toRem(35);
+	height: toRem(35);
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	transform: translate(0px, -100%);
+	transition: background-color 0.3s;
+	background-color: rgba($orangeColor, 0.75);
+	border-radius: toRem(5) toRem(5) toRem(0) toRem(0);
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: rgba($orangeColor, 1);
+		}
+	}
+}
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
@@ -57,5 +76,30 @@ body::after {
 	border-radius: 20px;
 	.lock & {
 		visibility: visible;
+	}
+}
+// Popup Video
+.video-popup {
+	padding: 0;
+	background-color: transparent;
+	// .video-popup__body
+	&__body {
+		height: 0;
+		max-width: 100%;
+		overflow: hidden;
+		position: relative;
+		padding-bottom: 56.25%; /* Соотношение 16:9 (9/16 * 100) */
+		background-color: $mainColor;
+		border-radius: toRem(15) toRem(0) toRem(15) toRem(15);
+		iframe {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		@media (max-width: $mobile) {
+			border-radius: toRem(5) toRem(0) toRem(5) toRem(5);
+		}
 	}
 }

@@ -359,10 +359,93 @@
 		text-transform: uppercase;
 	}
 }
+// Blog
+.blog {
+	position: relative;
+	@include adaptiveValue("padding-top", 80, 35);
+	@include adaptiveValue("padding-bottom", 80, 35);
+	// .blog__container
+	&__container {
+		position: relative;
+	}
+	// .blog__body
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 30, 15);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	// .blog__block
+	&__block {
+	}
+}
+.block-blog {
+	display: grid;
+	overflow: hidden;
+	padding: toRem(15);
+	row-gap: toRem(20);
+	border: 1px solid #ccc;
+	border-radius: toRem(15);
+	grid-template-rows: 1fr auto;
+	background-color: $grayColor;
+	box-shadow:
+		rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+		rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	@media (any-hover: hover) {
+		&:hover {
+			.block-blog__image {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+	// .block-blog__content
+	&__content {
+	}
+	// .block-blog__image
+	&__image {
+		overflow: hidden;
+		border-radius: toRem(15);
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+			rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .block-blog__title
+	&__title {
+		font-weight: 300;
+		line-height: 122%;
+		letter-spacing: 0.01em;
+		@include adaptiveValue("font-size", 25, 16);
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	// .block-blog__button
+	&__button {
+		width: 100%;
+		&.button {
+			padding: 0;
+		}
+		svg {
+			width: toRem(28);
+			height: toRem(28);
+		}
+	}
+	// .block-blog__text
+	&__text {
+		line-height: 142%;
+		letter-spacing: 0.02em;
+	}
+}
 // Fast
 .fast {
 	position: relative;
-	background: url("@img/fast-bg.jpg") 0 0 / cover no-repeat;
+	background: url("@img/guide-bg.jpg") 0 0 / cover no-repeat;
 	background-attachment: fixed;
 	@include adaptiveValue("padding-top", 80, 35);
 	@include adaptiveValue("padding-bottom", 80, 35);
@@ -374,7 +457,7 @@
 		height: 100%;
 		opacity: 0.75;
 		position: absolute;
-		background-color: #fff;
+		background-color: $grayColor;
 	}
 	// .fast__container
 	&__container {
@@ -413,7 +496,7 @@
 		border-radius: toRem(12);
 		text-transform: uppercase;
 		border: 1px solid $mainColor;
-		background-color: rgba(#fff, 0.35);
+		background-color: rgba(#fff, 0.45);
 		transition:
 			background-color 0.3s,
 			box-shadow 0.3s;
