@@ -2,17 +2,76 @@
 //<FORM>
 // Сніппет (HTML):
 .form {
-	&__row {
+	display: grid;
+	gap: toRem(25);
+	// .form__main
+	&__main {
+		display: grid;
+		@include adaptiveValue("gap", 20, 15);
 	}
-	&__column {
+	// .form__label
+	&__label {
+		.form__error {
+			color: red;
+			line-height: 125%;
+			margin-top: toRem(7);
+			@media (max-width: $mobileSmall) {
+				font-size: toRem(12);
+			}
+		}
 	}
-	&__line {
+	// .form__span
+	&__span {
+		display: flex;
+		font-size: toRem(16);
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+		&::after {
+			color: red;
+			content: "*";
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: toRem(14);
+		}
 	}
+	// .form__input
 	&__input {
 	}
-	&__button {
+	// .form__labels
+	&__labels {
+		display: grid;
+		align-items: start;
+		@include adaptiveValue("gap", 20, 15);
+		@media (min-width: toEm(1024)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
-	&__error {
+	// .form__select
+	&__select {
+	}
+	// .form__bottom
+	&__bottom {
+		display: grid;
+		@include adaptiveValue("gap", 20, 15);
+	}
+	// .form__text
+	&__text {
+		line-height: 145%;
+		a {
+			color: $blueColor;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	// .form__button
+	&__button {
+		&.button {
+			padding: 0;
+		}
 	}
 }
 //</FORM>
@@ -23,7 +82,7 @@
 //--------------------------------------------------------------
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import "input";
 //--------------------------------------------------------------
 // <CHECK>
 // Сніппет (HTML): chk
@@ -35,7 +94,7 @@
 //--------------------------------------------------------------
 // <SELECT>
 // Сніппет (HTML): sel
-// @import "select";
+@import "select";
 //--------------------------------------------------------------
 // <RATING>
 // Сніппет (HTML): rating

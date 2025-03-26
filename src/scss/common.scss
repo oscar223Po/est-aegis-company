@@ -168,6 +168,11 @@ summary {
 	font-weight: 700;
 	line-height: 115%;
 	@include adaptiveValue("font-size", 35, 18);
+	&--mb {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 15);
+		}
+	}
 }
 // Image
 .img {
@@ -179,10 +184,10 @@ summary {
 	}
 	&--brshad {
 		overflow: hidden;
-		border-radius: toRem(15);
+		@include adaptiveValue("border-radius", 15, 8);
 		box-shadow:
-			rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+			rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+			rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 		@media (any-hover: hover) {
 			&:hover {
 				img {
@@ -290,6 +295,7 @@ summary {
 	// .paragraph__block
 	&__block {
 		display: grid;
+		justify-items: start;
 		@include adaptiveValue("row-gap", 15, 8);
 		h4 {
 			font-weight: 700;
@@ -313,12 +319,12 @@ summary {
 				}
 			}
 		}
-		ul {
+		ul,
+		ol {
 			display: grid;
 			gap: toRem(8);
 			padding-left: toRem(20);
 			li {
-				list-style: disc;
 				line-height: 135%;
 				@include adaptiveValue("font-size", 16, 12);
 				span {
@@ -333,6 +339,26 @@ summary {
 					}
 				}
 			}
+		}
+		ul {
+			li {
+				list-style: disc;
+			}
+		}
+		strong {
+			line-height: 135%;
+			@include adaptiveValue("font-size", 19, 12);
+		}
+	}
+	// .paragraph__images
+	&__images {
+		display: grid;
+		@include adaptiveValue("gap", 30, 10);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(auto-fill, minmax(toRem(250), 1fr));
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 }
@@ -413,7 +439,77 @@ summary {
 		grid-template-columns: 63.076923% auto;
 	}
 }
-// Option
-.option-pd {
+// Extra Padding
+.extra-pb {
 	@include adaptiveValue("padding-bottom", 80, 35);
+}
+// Video
+.video {
+	height: 0;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 56.25%; /* Соотношение 16:9 (9/16 * 100) */
+	background-color: $mainColor;
+	iframe {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
+// Elements
+.elements {
+	display: grid;
+	@include adaptiveValue("gap", 40, 25);
+	// .elements__item
+	&__item {
+		display: grid;
+		align-items: center;
+		transition: box-shadow 0.3s;
+		background-color: $grayColor;
+		border: 1px solid rgba(#ccc, 0.45);
+		padding: toRem(15) toRem(15) toRem(15) toRem(30);
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+			rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		@include adaptiveValue("gap", 30, 20);
+		@include adaptiveValue("border-radius", 15, 8);
+		@media (min-width: $mobile) {
+			grid-template-columns: 63.076923% auto;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow:
+					rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+					rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+				.elements__image {
+					img {
+						transform: scale(1.05);
+					}
+				}
+			}
+		}
+		@media (max-width: $tablet) {
+			padding: toRem(15);
+		}
+	}
+	// .elements__paragraph
+	&__paragraph {
+		padding: toRem(15) toRem(0);
+		@media (max-width: $mobile) {
+			padding: toRem(5) toRem(0);
+		}
+		&.paragraph {
+			.paragraph__block {
+				justify-items: start;
+				@include adaptiveValue("row-gap", 20, 12);
+			}
+		}
+	}
+	// .elements__image
+	&__image {
+		height: 100%;
+	}
 }

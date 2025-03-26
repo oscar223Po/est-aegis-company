@@ -1,22 +1,10 @@
 // Product
 .product {
-	// .product__container
-	&__container {
-	}
-	// .product__title
-	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 25, 15);
-		}
-	}
 	// .product__paragraph
 	&__paragraph {
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 55, 30);
 		}
-	}
-	// .product__articles
-	&__articles {
 	}
 }
 // Detail
@@ -27,9 +15,7 @@
 	// .detail__title
 	&__title {
 		&:not(:last-child) {
-			&:not(:last-child) {
-				@include adaptiveValue("margin-bottom", 25, 15);
-			}
+			@include adaptiveValue("margin-bottom", 30, 15);
 		}
 	}
 	// .detail__body
@@ -53,20 +39,6 @@
 	}
 	// .detail__image
 	&__image {
-		overflow: hidden;
-		padding: toRem(10);
-		border-radius: toRem(20);
-		box-shadow:
-			rgba(60, 64, 67, 0.25) 0px 1px 2px 0px,
-			rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-		img {
-			transform: scale(1.03);
-		}
-		&.image-full {
-			img {
-				transform: scale(1.1);
-			}
-		}
 	}
 	// .detail__paragraph
 	&__paragraph {
@@ -154,9 +126,6 @@
 }
 // Paper
 .paper {
-	// .paper__container
-	&__container {
-	}
 	// .paper__title
 	&__title {
 		&:not(:last-child) {
@@ -183,29 +152,14 @@
 			@include adaptiveValue("margin-bottom", 30, 20);
 		}
 	}
-	// .paper__articles
-	&__articles {
-	}
 }
 // About
 .about {
-	// .about__container
-	&__container {
-	}
-	// .about__title
-	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 25, 15);
-		}
-	}
 	// .about__body
 	&__body {
 		&.custom {
 			align-items: normal;
 		}
-	}
-	// .about__paragraph
-	&__paragraph {
 	}
 	// .about__image
 	&__image {
@@ -225,21 +179,6 @@
 }
 // Garanty
 .garanty {
-	// .garanty__container
-	&__container {
-	}
-	// .garanty__title
-	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 25, 15);
-		}
-	}
-	// .garanty__body
-	&__body {
-	}
-	// .garanty__paragraph
-	&__paragraph {
-	}
 	// .garanty__image
 	&__image {
 		box-shadow:
@@ -249,21 +188,9 @@
 			rgba(240, 46, 170, 0.1) 20px 20px,
 			rgba(240, 46, 170, 0.05) 25px 25px;
 	}
-	// .garanty__articles
-	&__articles {
-	}
 }
 // Usage
 .usage {
-	// .usage__container
-	&__container {
-	}
-	// .usage__title
-	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 25, 15);
-		}
-	}
 	// .usage__paragraph
 	&__paragraph {
 		&:not(:last-child) {
@@ -279,6 +206,37 @@
 			.articles__title {
 				text-transform: uppercase;
 			}
+		}
+	}
+}
+// Electric
+.electric {
+	// .electric__paragraph
+	&__paragraph {
+		.paragraph__block {
+			&.video {
+				@include adaptiveValue("border-radius", 15, 8);
+				box-shadow:
+					rgba(240, 46, 170, 0.4) -5px 5px,
+					rgba(240, 46, 170, 0.3) -10px 10px,
+					rgba(240, 46, 170, 0.2) -15px 15px,
+					rgba(240, 46, 170, 0.1) -20px 20px,
+					rgba(240, 46, 170, 0.05) -25px 25px;
+				&:not(:last-child) {
+					margin-bottom: toRem(15);
+				}
+			}
+		}
+	}
+}
+// Type
+.type {
+	// .type__paragraph
+	&__paragraph {
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(#000, 0.34);
+			@include adaptiveValue("margin-bottom", 40, 25);
+			@include adaptiveValue("padding-bottom", 40, 25);
 		}
 	}
 }

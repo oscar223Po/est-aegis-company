@@ -5,7 +5,6 @@
 	line-height: 168%;
 	align-items: center;
 	display: inline-flex;
-	min-height: toRem(43);
 	border-radius: toRem(5);
 	letter-spacing: -0.03em;
 	justify-content: center;
@@ -15,6 +14,8 @@
 	box-shadow:
 		rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
 		rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	@include adaptiveValue("font-size", 14, 12);
+	@include adaptiveValue("min-height", 43, 38);
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: $blueColor;
