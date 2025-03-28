@@ -197,6 +197,20 @@ summary {
 		}
 	}
 }
+.float-img {
+	max-width: toRem(300);
+	@media (min-width: toEm(629.98)) {
+		float: right;
+		margin: 0px 0px 20px 20px;
+	}
+	@media (max-width: toEm(629.98)) {
+		display: flex;
+		margin: toRem(15) auto;
+	}
+	@media (max-width: $mobileSmall) {
+		max-width: 100%;
+	}
+}
 // Slider Atributes
 .controls {
 	// .controls__arrow
@@ -291,7 +305,7 @@ summary {
 // Paragraph
 .paragraph {
 	display: grid;
-	@include adaptiveValue("row-gap", 25, 17);
+	@include adaptiveValue("row-gap", 30, 17);
 	// .paragraph__block
 	&__block {
 		display: grid;
@@ -311,6 +325,7 @@ summary {
 			line-height: 135%;
 			@include adaptiveValue("font-size", 19, 12);
 			a {
+				display: inline;
 				color: $blueColor;
 				@media (any-hover: hover) {
 					&:hover {
@@ -344,10 +359,62 @@ summary {
 			li {
 				list-style: disc;
 			}
+			&.nav-stat {
+				display: flex;
+				flex-wrap: wrap;
+				padding-left: 0px;
+				@include adaptiveValue("gap", 12, 8);
+				@include adaptiveValue("padding-top", 12, 5);
+				@include adaptiveValue("padding-bottom", 12, 5);
+				li {
+					font-weight: 600;
+					list-style: none;
+					@include adaptiveValue("font-size", 19, 12);
+					a {
+						display: flex;
+						border: 1px solid #ccc;
+						border-radius: toRem(5);
+						padding: toRem(8) toRem(15);
+						background-color: $grayColor;
+						color: rgba($mainColor, 0.75);
+						transition:
+							background-color 0.3s,
+							border 0.3s,
+							color 0.3s;
+						@media (any-hover: hover) {
+							&:hover {
+								color: #fff;
+								text-decoration: none;
+								border: 1px solid $orangeColor;
+								background-color: $orangeColor;
+							}
+						}
+						@media (max-width: $mobileSmall) {
+							padding: toRem(7) toRem(10);
+						}
+					}
+				}
+			}
 		}
 		strong {
+			display: flex;
 			line-height: 135%;
 			@include adaptiveValue("font-size", 19, 12);
+		}
+		&--manual {
+			display: block;
+			h4,
+			h5,
+			p,
+			ul,
+			ol,
+			ul,
+			a,
+			strong {
+				&:not(:last-child) {
+					@include adaptiveValue("margin-bottom", 15, 8);
+				}
+			}
 		}
 	}
 	// .paragraph__images
@@ -361,27 +428,65 @@ summary {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
+	// .paragraph__text
+	&__text {
+		p {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 15, 8);
+			}
+		}
+	}
 }
 // Articles
 .articles {
 	display: grid;
-	@include adaptiveValue("gap", 30, 15);
-	@media (min-width: $mobileSmall) {
-		grid-template-columns: repeat(auto-fit, minmax(toRem(220), 1fr));
+	@include adaptiveValue("gap", 80, 35);
+	&--max {
+		.articles__items {
+			@media (min-width: $mobileSmall) {
+				grid-template-columns: repeat(auto-fill, minmax(toRem(250), 1fr));
+			}
+			.articles__title {
+				text-transform: uppercase;
+			}
+		}
 	}
-	&--flex {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		@include adaptiveValue("gap", 25, 15);
-		.articles__item {
-			max-width: toRem(235);
+	// .articles__subtitle
+	&__subtitle {
+		font-weight: 700;
+		line-height: 135%;
+		text-align: center;
+		@include adaptiveValue("font-size", 24, 18);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 20);
+		}
+	}
+	// .articles__items
+	&__items {
+		display: grid;
+		@include adaptiveValue("gap", 30, 15);
+		@media (min-width: $mobileSmall) {
+			grid-template-columns: repeat(auto-fill, minmax(toRem(220), 1fr));
+		}
+		&--flex {
+			display: flex;
+			margin: 0 auto;
+			flex-wrap: wrap;
+			max-width: toRem(1100);
+			justify-content: center;
+			@include adaptiveValue("gap", 25, 15);
+			.articles__item {
+				max-width: toRem(235);
+			}
 		}
 	}
 	// .articles__item
 	&__item {
-		padding: toRem(15);
+		width: 100%;
+		display: flex;
+		padding: 15px;
 		text-align: center;
+		flex-direction: column;
 		background-color: #f5f7fa;
 		transition:
 			background-color 0.3s,
@@ -405,7 +510,16 @@ summary {
 	// .articles__image
 	&__image {
 		overflow: hidden;
+		position: relative;
+		height: toRem(170);
 		border-radius: toRem(10);
+		img {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
 		&:not(:last-child) {
 			margin-bottom: toRem(15);
 		}
@@ -451,6 +565,7 @@ summary {
 	position: relative;
 	padding-bottom: 56.25%; /* Соотношение 16:9 (9/16 * 100) */
 	background-color: $mainColor;
+	@include adaptiveValue("border-radius", 15, 8);
 	iframe {
 		top: 0;
 		left: 0;

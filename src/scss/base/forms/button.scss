@@ -3,12 +3,13 @@
 	color: #fff;
 	font-weight: 700;
 	line-height: 168%;
+	text-align: center;
 	align-items: center;
 	display: inline-flex;
 	border-radius: toRem(5);
 	letter-spacing: -0.03em;
 	justify-content: center;
-	padding: toRem(0) toRem(27);
+	padding: toRem(5) toRem(27);
 	background-color: $orangeColor;
 	transition: background-color 0.3s;
 	box-shadow:

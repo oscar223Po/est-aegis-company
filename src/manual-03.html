@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Electro Static Technology - ManualPage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<!-- [Breadcrumbs] -->
+			<nav class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item"><a href="home.html" class="breadcrumbs__link">Главная</a></li>
+						<li class="breadcrumbs__item"><a href="protect.html" class="breadcrumbs__link">Защита подшипников</a></li>
+						<li class="breadcrumbs__item"><div class="breadcrumbs__current">Лучшие практики</div></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- [Manual] -->
+			<section class="manual extra-pb">
+				<div class="manual__container">
+					<h3 class="manual__title title title--mb">Лучшие практики</h3>
+					<div class="manual__paragraph paragraph">
+						<div class="paragraph__block paragraph__block--manual">
+							<h4>Каковы наилучшие методы защиты подшипников от тока?</h4>
+							<p>В нашем Руководстве по защите подшипников мы расскажем вам все, что вам нужно знать о защите двигателей с приводом VFD от электрических повреждений подшипников и предотвращении дорогостоящего ремонта, простоев и производственных потерь. В этом подробном руководстве вы найдете все, что вам нужно для определения причины проблемы, ее решения и установки.</p>
+						</div>
+					</div>
+					<div class="manual__content">
+						<div class="manual__paragraph paragraph">
+							<div class="paragraph__block">
+								<strong>Изучите передовой опыт для:</strong>
+								<ul>
+									<li>Двигатели до 100 л. с. (75 кВт) включительно – низкое напряжение</li>
+									<li>Двигатели более 100 л. с. (75 кВт)</li>
+									<li>Двигатели, в которых оба подшипника изолированы</li>
+									<li>Двигатели с цилиндрическими роликовыми, баббитовыми или втулковыми подшипниками</li>
+									<li>Вертикальные двигатели со сплошным валом</li>
+									<li>Вертикальные двигатели с полым валом</li>
+									<li>Двигатели постоянного тока</li>
+									<li>Заземление</li>
+								</ul>
+								<a href="" class="button">Скачать Справочник по защите подшипников</a>
+							</div>
+						</div>
+						<div class="manual__image img"><img src="@img/protect/03.png" alt="Image"></div>
+					</div>
+				</div>
+			</section>
+			<!-- [Fast] -->
+			@@include('html/_fast.htm',{})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Electro Static Technology - ProtectPage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<!-- [Breadcrumbs] -->
+			<nav class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item"><a href="home.html" class="breadcrumbs__link">Главная</a></li>
+						<li class="breadcrumbs__item"><div class="breadcrumbs__current">Защита подшипников</div></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- [Protect] -->
+			<section class="protect extra-pb">
+				<div class="protect__container">
+					<h3 class="protect__title title title--mb">Защита подшипников двигателя</h3>
+					<div class="protect__paragraph paragraph">
+						<div class="paragraph__block">
+							<p>Что вызывает повреждение электрических подшипников в двигателях с питанием от частотно-регулируемого привода? Как можно диагностировать, вышел ли подшипник из строя из-за электрического повреждения? Каковы наилучшие методы защиты от повреждения электрических подшипников? Узнайте ниже.</p>
+						</div>
+						<div class="paragraph__block video">
+							<iframe src="https://www.youtube.com/embed/Yrrwi7lGWcs" title="About AEGIS Shaft Grounding Rings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="protect__articles articles">
+						<div class="articles__block">
+							<div class="articles__items articles__items--flex">
+								<a target="_blank" href="manual-01.html" class="articles__item">
+									<div class="articles__image img"><img src="@img/protect/01.png" alt="Image"></div>
+									<h4 class="articles__title">Напряжение вала и токи подшипников</h4>
+								</a>
+								<a target="_blank" href="manual-02.html" class="articles__item">
+									<div class="articles__image img"><img src="@img/protect/02.png" alt="Image"></div>
+									<h4 class="articles__title">Проверка рифления и подшипников</h4>
+								</a>
+								<a target="_blank" href="manual-03.html" class="articles__item">
+									<div class="articles__image img"><img src="@img/protect/03.png" alt="Image"></div>
+									<h4 class="articles__title">Лучшие практики</h4>
+								</a>
+							</div>
+						</div>
+						<div class="articles__block">
+							<h4 class="articles__subtitle">Отчеты о проверке</h4>
+							<div class="articles__items articles__items--flex">
+								<a target="_blank" href="" class="articles__item">
+									<div class="articles__image img"><img src="@img/paper.jpg" alt="Image"></div>
+									<h4 class="articles__title">Отчет о проверке подшипников</h4>
+									<div class="articles__text">
+										<p>The sources and risks of electrical bearing damage, and how to mitigate it.</p>
+									</div>
+								</a>
+								<a target="_blank" href="" class="articles__item">
+									<div class="articles__image img"><img src="@img/paper.jpg" alt="Image"></div>
+									<h4 class="articles__title">Отчет об испытании напряжения вала</h4>
+									<div class="articles__text">
+										<p>Several 250 HP chilled water pump motors suffered repeated bearing failure.</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- [Fast] -->
+			@@include('html/_fast.htm',{})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

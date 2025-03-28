@@ -9,24 +9,18 @@
 }
 // Detail
 .detail {
-	// .detail__container
-	&__container {
-	}
 	// .detail__title
 	&__title {
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 30, 15);
 		}
 	}
-	// .detail__body
-	&__body {
-	}
 	// .detail__images
 	&__images {
 		display: grid;
 		@include adaptiveValue("gap", 30, 15);
 		@media (min-width: $mobileSmall) {
-			grid-template-columns: repeat(auto-fit, minmax(toRem(220), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(toRem(320), 1fr)); // 220
 		}
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 45, 30);
@@ -36,12 +30,6 @@
 	&__button {
 		display: flex;
 		justify-content: center;
-	}
-	// .detail__image
-	&__image {
-	}
-	// .detail__paragraph
-	&__paragraph {
 	}
 	// .detail__picture
 	&__picture {
@@ -132,26 +120,6 @@
 			@include adaptiveValue("margin-bottom", 50, 25);
 		}
 	}
-	// .paper__body
-	&__body {
-		display: grid;
-		@include adaptiveValue("gap", 80, 35);
-	}
-	// .paper__block
-	&__block {
-		margin: 0 auto;
-		max-width: toRem(1100);
-	}
-	// .paper__subtitle
-	&__subtitle {
-		font-weight: 700;
-		line-height: 135%;
-		text-align: center;
-		@include adaptiveValue("font-size", 24, 18);
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 30, 20);
-		}
-	}
 }
 // About
 .about {
@@ -197,17 +165,6 @@
 			@include adaptiveValue("margin-bottom", 40, 20);
 		}
 	}
-	// .usage__articles
-	&__articles {
-		&.articles {
-			@media (min-width: $mobileSmall) {
-				grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
-			}
-			.articles__title {
-				text-transform: uppercase;
-			}
-		}
-	}
 }
 // Electric
 .electric {
@@ -215,7 +172,6 @@
 	&__paragraph {
 		.paragraph__block {
 			&.video {
-				@include adaptiveValue("border-radius", 15, 8);
 				box-shadow:
 					rgba(240, 46, 170, 0.4) -5px 5px,
 					rgba(240, 46, 170, 0.3) -10px 10px,
@@ -237,6 +193,48 @@
 			border-bottom: 1px solid rgba(#000, 0.34);
 			@include adaptiveValue("margin-bottom", 40, 25);
 			@include adaptiveValue("padding-bottom", 40, 25);
+		}
+	}
+}
+// Protect
+.protect {
+	// .protect__paragraph
+	&__paragraph {
+		.paragraph__block {
+			&.video {
+				box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+			}
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 80, 40);
+		}
+	}
+}
+// Manual
+.manual {
+	// .manual__elements
+	&__elements {
+		@include adaptiveValue("padding-top", 60, 35);
+	}
+	// .manual__content
+	&__content {
+		display: grid;
+		align-items: start;
+		@include adaptiveValue("gap", 30, 15);
+		@include adaptiveValue("padding-top", 20, 10);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+// Resource
+.resource {
+	// .resource__title
+	&__title {
+		&.title--mb {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 50, 20);
+			}
 		}
 	}
 }

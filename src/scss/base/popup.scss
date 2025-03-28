@@ -84,9 +84,11 @@ body::after {
 	background-color: transparent;
 	// .video-popup__body
 	&__body {
-		border-radius: toRem(15) toRem(0) toRem(15) toRem(15);
-		@media (max-width: $mobile) {
-			border-radius: toRem(5) toRem(0) toRem(5) toRem(5);
+		&.video {
+			border-radius: toRem(15) toRem(0) toRem(15) toRem(15);
+			@media (max-width: $mobile) {
+				border-radius: toRem(8) toRem(0) toRem(8) toRem(8);
+			}
 		}
 	}
 }
