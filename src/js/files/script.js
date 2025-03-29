@@ -36,4 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	window.addEventListener('load', updatePadding);
 	window.addEventListener('resize', updatePadding);
+	// Extra Form Checkbox
+	const extraForm = document.querySelector(".form__extra");
+	const checkboxForm = document.querySelector(".checkbox__input");
+	if (extraForm !== null) {
+		checkboxForm.addEventListener("change", function () {
+			if (checkboxForm.checked) {
+				extraForm.classList.remove("extra-disable");
+			} else {
+				extraForm.classList.add("extra-disable");
+			}
+		});
+	}
 });

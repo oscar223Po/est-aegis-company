@@ -182,12 +182,9 @@ summary {
 		object-fit: cover;
 		transition: transform 0.3s;
 	}
-	&--brshad {
+	&--br {
 		overflow: hidden;
 		@include adaptiveValue("border-radius", 15, 8);
-		box-shadow:
-			rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-			rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 		@media (any-hover: hover) {
 			&:hover {
 				img {
@@ -209,6 +206,28 @@ summary {
 	}
 	@media (max-width: $mobileSmall) {
 		max-width: 100%;
+	}
+}
+// Shadow
+.shad {
+	box-shadow:
+		rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	&--rowr {
+		box-shadow:
+			rgba(240, 46, 170, 0.4) 5px 5px,
+			rgba(240, 46, 170, 0.3) 10px 10px,
+			rgba(240, 46, 170, 0.2) 15px 15px,
+			rgba(240, 46, 170, 0.1) 20px 20px,
+			rgba(240, 46, 170, 0.05) 25px 25px;
+	}
+	&--rowl {
+		box-shadow:
+			rgba(240, 46, 170, 0.4) -5px 5px,
+			rgba(240, 46, 170, 0.3) -10px 10px,
+			rgba(240, 46, 170, 0.2) -15px 15px,
+			rgba(240, 46, 170, 0.1) -20px 20px,
+			rgba(240, 46, 170, 0.05) -25px 25px;
 	}
 }
 // Slider Atributes
@@ -311,6 +330,11 @@ summary {
 		display: grid;
 		justify-items: start;
 		@include adaptiveValue("row-gap", 15, 8);
+		h3 {
+			font-weight: 700;
+			line-height: 115%;
+			@include adaptiveValue("font-size", 35, 18);
+		}
 		h4 {
 			font-weight: 700;
 			line-height: 125%;
@@ -400,6 +424,11 @@ summary {
 			display: flex;
 			line-height: 135%;
 			@include adaptiveValue("font-size", 19, 12);
+		}
+		.img-cnt {
+			margin: 0 auto;
+			max-width: 100%;
+			padding-top: toRem(10);
 		}
 		&--manual {
 			display: block;

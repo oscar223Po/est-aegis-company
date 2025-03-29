@@ -115,11 +115,27 @@ body {
   grid-column: 3/4
 }
 .form {
-  display: grid;
-  gap: 1.5625rem
-}
-.form__main {
   display: grid
+}
+.form__fieldset {
+  display: grid
+}
+.form__fieldset p {
+  line-height: 145%
+}
+.form__fieldset p a {
+  display: inline;
+  color: #0066b3
+}
+.form__extra {
+  display: grid
+}
+.form__extra.extra-disable {
+  display: none
+}
+.form__labels {
+  display: grid;
+  align-items: start
 }
 .form__label .form__error {
   color: red;
@@ -136,22 +152,6 @@ body {
 .form__span::after {
   color: red;
   content: "*"
-}
-.form__labels {
-  display: grid;
-  align-items: start
-}
-.form__bottom {
-  display: grid
-}
-.form__text {
-  line-height: 145%
-}
-.form__text a {
-  color: #0066b3
-}
-.form__button.button {
-  padding: 0
 }
 .button {
   color: #fff;
@@ -224,6 +224,45 @@ textarea {
 textarea.input {
   resize: none;
   padding: 0 0
+}
+.checkbox {
+  position: relative
+}
+.checkbox:not(:last-child) {
+  margin-bottom: em(5)
+}
+.checkbox__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0
+}
+.checkbox__input:checked+.checkbox__label:before {
+  color: #fff;
+  background: #0066b3;
+  border: 1px solid #0066b3
+}
+.checkbox__label {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex
+}
+.checkbox__label:before {
+  width: 20px;
+  content: "✔";
+  height: 20px;
+  display: flex;
+  flex: 0 0 20px;
+  padding-left: 1px;
+  color: transparent;
+  align-items: center;
+  border: 1px solid #111;
+  justify-content: center;
+  border-radius: .25rem
+}
+.checkbox__text {
+  line-height: 125%;
+  align-self: center
 }
 .select {
   min-width: 0;
@@ -729,12 +768,20 @@ summary::marker {
   transition: transform .3s;
   transition: transform .3s,-webkit-transform .3s
 }
-.img--brshad {
-  overflow: hidden;
-  box-shadow: rgba(0,0,0,.1) 0 10px 15px -3px,rgba(0,0,0,.05) 0 4px 6px -2px
+.img--br {
+  overflow: hidden
 }
 .float-img {
   max-width: 18.75rem
+}
+.shad {
+  box-shadow: rgba(0,0,0,.1) 0 10px 15px -3px,rgba(0,0,0,.05) 0 4px 6px -2px
+}
+.shad--rowr {
+  box-shadow: rgba(240,46,170,.4) 5px 5px,rgba(240,46,170,.3) 10px 10px,rgba(240,46,170,.2) 15px 15px,rgba(240,46,170,.1) 20px 20px,rgba(240,46,170,.05) 25px 25px
+}
+.shad--rowl {
+  box-shadow: rgba(240,46,170,.4) -5px 5px,rgba(240,46,170,.3) -10px 10px,rgba(240,46,170,.2) -15px 15px,rgba(240,46,170,.1) -20px 20px,rgba(240,46,170,.05) -25px 25px
 }
 .controls__arrow {
   display: flex;
@@ -801,6 +848,10 @@ summary::marker {
   display: grid;
   justify-items: start
 }
+.paragraph__block h3 {
+  font-weight: 700;
+  line-height: 115%
+}
 .paragraph__block h4 {
   font-weight: 700;
   line-height: 125%
@@ -858,6 +909,11 @@ summary::marker {
 .paragraph__block strong {
   display: flex;
   line-height: 135%
+}
+.paragraph__block .img-cnt {
+  margin: 0 auto;
+  max-width: 100%;
+  padding-top: .625rem
 }
 .paragraph__block--manual {
   display: block
@@ -1284,7 +1340,6 @@ summary::marker {
 }
 .block-blog__image {
   overflow: hidden;
-  border-radius: .9375rem;
   box-shadow: rgba(0,0,0,.1) 0 1px 3px 0,rgba(0,0,0,.06) 0 1px 2px 0
 }
 .block-blog__image:not(:last-child) {
@@ -1423,17 +1478,8 @@ summary::marker {
 .about__body.custom {
   align-items: normal
 }
-.about__image {
-  box-shadow: rgba(240,46,170,.4) 5px 5px,rgba(240,46,170,.3) 10px 10px,rgba(240,46,170,.2) 15px 15px,rgba(240,46,170,.1) 20px 20px,rgba(240,46,170,.05) 25px 25px
-}
 .about__articles .articles__title {
   text-transform: uppercase
-}
-.garanty__image {
-  box-shadow: rgba(240,46,170,.4) 5px 5px,rgba(240,46,170,.3) 10px 10px,rgba(240,46,170,.2) 15px 15px,rgba(240,46,170,.1) 20px 20px,rgba(240,46,170,.05) 25px 25px
-}
-.electric__paragraph .paragraph__block.video {
-  box-shadow: rgba(240,46,170,.4) -5px 5px,rgba(240,46,170,.3) -10px 10px,rgba(240,46,170,.2) -15px 15px,rgba(240,46,170,.1) -20px 20px,rgba(240,46,170,.05) -25px 25px
 }
 .electric__paragraph .paragraph__block.video:not(:last-child) {
   margin-bottom: .9375rem
@@ -1447,6 +1493,23 @@ summary::marker {
 .manual__content {
   display: grid;
   align-items: start
+}
+.technical__body {
+  display: grid;
+  align-items: start
+}
+.technical__content {
+  display: grid
+}
+.technical__form {
+  justify-items: start
+}
+.technical__label {
+  font-weight: 700;
+  line-height: 125%
+}
+.technical__label span {
+  font-style: italic
 }
 .swiper {
   overflow: hidden
@@ -1573,6 +1636,9 @@ summary::marker {
   .manual__content {
     grid-template-columns: repeat(2,1fr)
   }
+  .technical__body {
+    grid-template-columns: auto 35.384615%
+  }
 }
 @media (min-width:47.99875em)and (any-hover:hover) {
   .spollers-menu__item:hover .spollers-menu__title a {
@@ -1625,20 +1691,38 @@ summary::marker {
   [class*=__container] {
     padding-right: 2.1875rem
   }
-  .form__main {
+  .form {
+    gap: 1.5625rem
+  }
+  .form__fieldset {
+    gap: 1.25rem
+  }
+  .form__fieldset p {
+    font-size: .875rem
+  }
+  .form__extra {
     gap: 1.25rem
   }
   .form__labels {
     gap: 1.25rem
   }
-  .form__bottom {
-    gap: 1.25rem
+  .form__span {
+    font-size: 1rem
   }
   .button {
     font-size: .875rem
   }
   .button {
     min-height: 2.6875rem
+  }
+  .checkbox__label {
+    gap: .625rem
+  }
+  .checkbox__label:before {
+    margin-top: .0000000625rem
+  }
+  .checkbox__text {
+    font-size: 1rem
   }
   .spollers-footer__title {
     font-size: 1.25rem
@@ -1667,7 +1751,7 @@ summary::marker {
   .title--mb:not(:last-child) {
     margin-bottom: 1.875rem
   }
-  .img--brshad {
+  .img--br {
     border-radius: .9375rem
   }
   .breadcrumbs {
@@ -1684,6 +1768,9 @@ summary::marker {
   }
   .paragraph__block {
     row-gap: .9375rem
+  }
+  .paragraph__block h3 {
+    font-size: 2.1875rem
   }
   .paragraph__block h4 {
     font-size: 1.875rem
@@ -1855,6 +1942,9 @@ summary::marker {
   .blog__body {
     gap: 1.875rem
   }
+  .block-blog__image {
+    border-radius: .9375rem
+  }
   .block-blog__title {
     font-size: 1.5625rem
   }
@@ -1935,6 +2025,21 @@ summary::marker {
   }
   .resource__title.title--mb:not(:last-child) {
     margin-bottom: 3.125rem
+  }
+  .technical__body {
+    gap: 3.75rem
+  }
+  .technical__body:not(:last-child) {
+    margin-bottom: 3.75rem
+  }
+  .technical__content {
+    gap: 1.875rem
+  }
+  .technical__label {
+    font-size: 1.25rem
+  }
+  .technical__label:not(:last-child) {
+    margin-bottom: 1.25rem
   }
 }
 @media (min-width:91.87375em) {
@@ -2039,20 +2144,38 @@ summary::marker {
   [class*=__container] {
     padding-right: .9375rem
   }
-  .form__main {
+  .form {
+    gap: 1.25rem
+  }
+  .form__fieldset {
+    gap: .9375rem
+  }
+  .form__fieldset p {
+    font-size: .75rem
+  }
+  .form__extra {
     gap: .9375rem
   }
   .form__labels {
     gap: .9375rem
   }
-  .form__bottom {
-    gap: .9375rem
+  .form__span {
+    font-size: .875rem
   }
   .button {
     font-size: .75rem
   }
   .button {
     min-height: 2.375rem
+  }
+  .checkbox__label {
+    gap: .5rem
+  }
+  .checkbox__label:before {
+    margin-top: .1875rem
+  }
+  .checkbox__text {
+    font-size: .875rem
   }
   .spollers-footer__title {
     font-size: 1rem
@@ -2081,7 +2204,7 @@ summary::marker {
   .title--mb:not(:last-child) {
     margin-bottom: .9375rem
   }
-  .img--brshad {
+  .img--br {
     border-radius: .5rem
   }
   .breadcrumbs {
@@ -2098,6 +2221,9 @@ summary::marker {
   }
   .paragraph__block {
     row-gap: .5rem
+  }
+  .paragraph__block h3 {
+    font-size: 1.125rem
   }
   .paragraph__block h4 {
     font-size: 1rem
@@ -2269,6 +2395,9 @@ summary::marker {
   .blog__body {
     gap: .9375rem
   }
+  .block-blog__image {
+    border-radius: .5rem
+  }
   .block-blog__title {
     font-size: 1rem
   }
@@ -2349,6 +2478,21 @@ summary::marker {
   }
   .resource__title.title--mb:not(:last-child) {
     margin-bottom: 1.25rem
+  }
+  .technical__body {
+    gap: 1.5625rem
+  }
+  .technical__body:not(:last-child) {
+    margin-bottom: 2.1875rem
+  }
+  .technical__content {
+    gap: .9375rem
+  }
+  .technical__label {
+    font-size: .875rem
+  }
+  .technical__label:not(:last-child) {
+    margin-bottom: .9375rem
   }
 }
 @media (max-width:91.87375em) {
@@ -2585,9 +2729,6 @@ summary::marker {
   .form__label .form__error {
     font-size: .75rem
   }
-  .form__span {
-    font-size: .875rem
-  }
   .float-img {
     max-width: 100%
   }
@@ -2619,20 +2760,38 @@ summary::marker {
   [class*=__container] {
     padding-right: clamp(.9375rem ,.556547619rem + 1.9047619048vw ,2.1875rem)
   }
-  .form__main {
+  .form {
+    gap: clamp(1.25rem ,1.1547619048rem + .4761904762vw ,1.5625rem)
+  }
+  .form__fieldset {
+    gap: clamp(.9375rem ,.8422619048rem + .4761904762vw ,1.25rem)
+  }
+  .form__fieldset p {
+    font-size: clamp(.75rem ,.7119047619rem + .1904761905vw ,.875rem)
+  }
+  .form__extra {
     gap: clamp(.9375rem ,.8422619048rem + .4761904762vw ,1.25rem)
   }
   .form__labels {
     gap: clamp(.9375rem ,.8422619048rem + .4761904762vw ,1.25rem)
   }
-  .form__bottom {
-    gap: clamp(.9375rem ,.8422619048rem + .4761904762vw ,1.25rem)
+  .form__span {
+    font-size: clamp(.875rem ,.8369047619rem + .1904761905vw ,1rem)
   }
   .button {
     font-size: clamp(.75rem ,.7119047619rem + .1904761905vw ,.875rem)
   }
   .button {
     min-height: clamp(2.375rem ,2.2797619048rem + .4761904762vw ,2.6875rem)
+  }
+  .checkbox__label {
+    gap: clamp(.5rem ,.4619047619rem + .1904761905vw ,.625rem)
+  }
+  .checkbox__label:before {
+    margin-top: clamp(.0000000625rem ,.2446428381rem + -.2857141905vw ,.1875rem)
+  }
+  .checkbox__text {
+    font-size: clamp(.875rem ,.8369047619rem + .1904761905vw ,1rem)
   }
   .spollers-footer__title {
     font-size: clamp(1rem ,.9238095238rem + .380952381vw ,1.25rem)
@@ -2661,7 +2820,7 @@ summary::marker {
   .title--mb:not(:last-child) {
     margin-bottom: clamp(.9375rem ,.6517857143rem + 1.4285714286vw ,1.875rem)
   }
-  .img--brshad {
+  .img--br {
     border-radius: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
   }
   .breadcrumbs {
@@ -2678,6 +2837,9 @@ summary::marker {
   }
   .paragraph__block {
     row-gap: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
+  }
+  .paragraph__block h3 {
+    font-size: clamp(1.125rem ,.8011904762rem + 1.619047619vw ,2.1875rem)
   }
   .paragraph__block h4 {
     font-size: clamp(1rem ,.7333333333rem + 1.3333333333vw ,1.875rem)
@@ -2843,6 +3005,9 @@ summary::marker {
   .blog__body {
     gap: clamp(.9375rem ,.6517857143rem + 1.4285714286vw ,1.875rem)
   }
+  .block-blog__image {
+    border-radius: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
+  }
   .block-blog__title {
     font-size: clamp(1rem ,.8285714286rem + .8571428571vw ,1.5625rem)
   }
@@ -2924,6 +3089,21 @@ summary::marker {
   .resource__title.title--mb:not(:last-child) {
     margin-bottom: clamp(1.25rem ,.6785714286rem + 2.8571428571vw ,3.125rem)
   }
+  .technical__body {
+    gap: clamp(1.5625rem ,.8958333333rem + 3.3333333333vw ,3.75rem)
+  }
+  .technical__body:not(:last-child) {
+    margin-bottom: clamp(2.1875rem ,1.7113095238rem + 2.380952381vw ,3.75rem)
+  }
+  .technical__content {
+    gap: clamp(.9375rem ,.6517857143rem + 1.4285714286vw ,1.875rem)
+  }
+  .technical__label {
+    font-size: clamp(.875rem ,.7607142857rem + .5714285714vw ,1.25rem)
+  }
+  .technical__label:not(:last-child) {
+    margin-bottom: clamp(.9375rem ,.8422619048rem + .4761904762vw ,1.25rem)
+  }
 }
 @media (max-width:47.99875em)and (min-width:85.625em) {
   .menu__body {
@@ -2976,7 +3156,7 @@ summary::marker {
   }
 }
 @media (any-hover:hover) {
-  .form__text a:hover {
+  .form__fieldset p a:hover {
     text-decoration: underline
   }
   .button:hover {
@@ -2994,7 +3174,7 @@ summary::marker {
   .spollers-footer__link:hover {
     text-decoration: underline
   }
-  .img--brshad:hover img {
+  .img--br:hover img {
     -webkit-transform: scale(1.05);
     transform: scale(1.05)
   }

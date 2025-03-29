@@ -4791,6 +4791,11 @@
         }
         window.addEventListener("load", updatePadding);
         window.addEventListener("resize", updatePadding);
+        const extraForm = document.querySelector(".form__extra");
+        const checkboxForm = document.querySelector(".checkbox__input");
+        if (extraForm !== null) checkboxForm.addEventListener("change", (function() {
+            if (checkboxForm.checked) extraForm.classList.remove("extra-disable"); else extraForm.classList.add("extra-disable");
+        }));
     }));
     window["FLS"] = false;
     addLoadedClass();

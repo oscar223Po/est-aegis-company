@@ -11,7 +11,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250328213252">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250329192104">
 	<link rel="shortcut icon" href="img/icons/shortcut.svg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +189,7 @@
 								<p>Наши заземляющие кольца вала электромобиля специально разработаны для защиты подшипников от электроэрозионной обработки (ЭЭО) и улучшения электромагнитной совместимости (ЭМС) в электромобилях.</p>
 								<p>Узнайте больше о том, почему наши партнеры по всему миру используют это решение для защиты своих электромобилей от нежелательных электрических эффектов.</p>
 							</div>
-							<div class="paragraph__block video">
+							<div class="paragraph__block video shad shad--rowl">
 								<iframe src="https://www.youtube.com/embed/wdPWY1zaWi4" title="AEGIS Rings for Electric Vehicles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 							</div>
 							<div class="paragraph__block">
@@ -199,27 +199,28 @@
 							</div>
 						</div>
 						<form action="#" class="electric__form form">
-							<div class="form__main">
-								<div class="form__label">
-									<label for="email" class="form__span">Email</label>
+							<fieldset class="form__fieldset">
+								<legend style="display: none;"></legend>
+								<label class="form__label">
+									<span class="form__span">Email</span>
 									<input data-required="email" autocomplete="off" type="email" name="form[]" data-error="Пожалуйста, введите свой Email" class="form__input input">
-								</div>
+								</label>
 								<div class="form__labels">
-									<div class="form__label">
-										<label for="text" class="form__span">Имя</label>
+									<label class="form__label">
+										<span class="form__span">Имя</span>
 										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, введите свое Имя" class="form__input input">
-									</div>
-									<div class="form__label">
-										<label for="text" class="form__span">Фамилия</label>
+									</label>
+									<label class="form__label">
+										<span class="form__span">Фамилия</span>
 										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, введите свою Фамилию" class="form__input input">
-									</div>
+									</label>
 								</div>
-								<div class="form__label">
-									<label for="text" class="form__span">Наименование компании</label>
+								<label class="form__label">
+									<span class="form__span">Наименование компании</span>
 									<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, заполните обязательное поле" class="form__input input">
-								</div>
-								<div class="form__select">
-									<label for="text" class="form__span">Страна</label>
+								</label>
+								<label class="form__label">
+									<span class="form__span">Страна</span>
 									<select name="form[]" data-class-modif="form">
 										<option value="" selected disabled>Выберите вариант</option>
 										<option value="1">Afghanistan</option>
@@ -387,14 +388,10 @@
 										<option value="163">Zambia</option>
 										<option value="164">Zimbabwe</option>
 									</select>
-								</div>
-							</div>
-							<div class="form__bottom">
-								<div class="form__text">
-									<p>EST-AEGIS needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="">Privacy Policy.</a></p>
-								</div>
-								<button type="submit" class="form__button button">Download The EV White Paper!</button>
-							</div>
+								</label>
+								<p>EST-AEGIS needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="">Privacy Policy.</a></p>
+							</fieldset>
+							<button type="submit" class="form__button button">Download The EV White Paper!</button>
 						</form>
 					</div>
 				</div>
@@ -563,7 +560,7 @@
 		</footer>
 		<!-- Footer -->
 	</div>
-	<script src="js/app.min.js?_v=20250328213252"></script>
+	<script src="js/app.min.js?_v=20250329192104"></script>
 </body>
 
 </html>

@@ -10,30 +10,37 @@
 		width: 0;
 		height: 0;
 		opacity: 0;
-		&:focus-visible + .checkbox__label:before {
-			box-shadow: 0 0 5px #000;
-		}
 		&:checked + .checkbox__label:before {
-			background: #000;
+			color: #fff;
+			background: $blueColor;
+			border: 1px solid $blueColor;
 		}
 	}
 	// .checkbox__label
 	&__label {
 		cursor: pointer;
-		display: inline-flex;
 		position: relative;
-		gap: 10px;
+		display: inline-flex;
+		@include adaptiveValue("gap", 10, 8);
 		&:before {
-			content: "";
-			align-self: flex-start;
-			flex: 0 0 20px;
 			width: 20px;
+			content: "✔";
 			height: 20px;
-			border: 1px solid #a7a9ac;
+			display: flex;
+			flex: 0 0 20px;
+			padding-left: 1px;
+			color: transparent;
+			align-items: center;
+			border: 1px solid #111;
+			justify-content: center;
+			border-radius: toRem(4);
+			@include adaptiveValue("margin-top", 0, 3);
 		}
 	}
 	// .checkbox__text
 	&__text {
+		line-height: 125%;
 		align-self: center;
+		@include adaptiveValue("font-size", 16, 14);
 	}
 }
