@@ -43,9 +43,6 @@
 .charact {
 	@include adaptiveValue("padding-top", 80, 35);
 	@include adaptiveValue("padding-bottom", 80, 35);
-	// .charact__container
-	&__container {
-	}
 	// .charact__title
 	&__title {
 		font-weight: 500;
@@ -64,9 +61,6 @@
 		@media (min-width: $mobileSmall) {
 			grid-template-columns: repeat(auto-fill, minmax(toRem(350), 1fr));
 		}
-	}
-	// .charact__item
-	&__item {
 	}
 	// .charact__button
 	&__button {
@@ -149,7 +143,7 @@
 .electric {
 	// .electric__paragraph
 	&__paragraph {
-		.paragraph__block {
+		article {
 			&.video {
 				&:not(:last-child) {
 					margin-bottom: toRem(15);
@@ -173,11 +167,6 @@
 .protect {
 	// .protect__paragraph
 	&__paragraph {
-		.paragraph__block {
-			&.video {
-				box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-			}
-		}
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 80, 40);
 		}

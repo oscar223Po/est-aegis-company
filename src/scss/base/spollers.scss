@@ -1,25 +1,38 @@
 // Custom Spollers
 .spollers {
+	gap: 12px;
 	display: grid;
-	gap: 15px;
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+	overflow: hidden;
+	border-radius: 8px;
+	border: 1px solid #eee;
 }
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
+	font-weight: 700;
 	list-style: none;
+	line-height: 135%;
+	position: relative;
+	padding-top: toRem(15);
+	padding-right: toRem(50);
+	padding-bottom: toRem(15);
+	@include adaptiveValue("font-size", 20, 14);
+	transition:
+		background-color 0.5s,
+		color 0.5s;
+	@include adaptiveValue("padding-left", 20, 10);
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
+	}
+	&._spoller-active {
+		pointer-events: none;
+		background-color: rgba(#ccc, 0.65);
 	}
 	._spoller-init & {
 		cursor: pointer;
@@ -27,12 +40,17 @@
 		&::after {
 			content: "";
 			position: absolute;
-			right: 10px;
+			right: 15px;
 			top: 50%;
 			background-color: #000;
 			height: 2px;
 			width: 15px;
-			transition: transform 0.5s ease 0s;
+			transition:
+				transform 0.5s ease 0s,
+				background-color 0.5s ease 0s;
+			@media (max-width: $mobile) {
+				width: 10px;
+			}
 		}
 		&::before {
 			transform: translate(-75%, -50%) rotate(40deg);
@@ -82,12 +100,20 @@
 		}
 		*/
 	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: #fff;
+			background-color: rgba($blueColor, 0.75);
+			&::before,
+			&::after {
+				background-color: #fff;
+			}
+		}
+	}
 }
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+	@include adaptiveValue("padding", 20, 10);
 }
 // ========================================================================================================================================================
 // Menu Spollers

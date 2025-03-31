@@ -325,31 +325,54 @@ summary {
 .paragraph {
 	display: grid;
 	@include adaptiveValue("row-gap", 30, 17);
-	// .paragraph__block
-	&__block {
+	h3 {
+		font-weight: 700;
+		line-height: 115%;
+		@include adaptiveValue("font-size", 35, 18);
+	}
+	h4 {
+		font-weight: 700;
+		line-height: 125%;
+		@include adaptiveValue("font-size", 30, 16);
+	}
+	h5 {
+		font-weight: 500;
+		line-height: 115%;
+		@include adaptiveValue("font-size", 25, 14);
+		a {
+			color: $blueColor;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	p {
+		line-height: 135%;
+		@include adaptiveValue("font-size", 19, 12);
+		a {
+			display: inline;
+			color: $blueColor;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	ul,
+	ol {
 		display: grid;
-		justify-items: start;
-		@include adaptiveValue("row-gap", 15, 8);
-		h3 {
-			font-weight: 700;
-			line-height: 115%;
-			@include adaptiveValue("font-size", 35, 18);
-		}
-		h4 {
-			font-weight: 700;
-			line-height: 125%;
-			@include adaptiveValue("font-size", 30, 16);
-		}
-		h5 {
-			font-weight: 500;
-			line-height: 115%;
-			@include adaptiveValue("font-size", 25, 14);
-		}
-		p {
+		gap: toRem(8);
+		padding-left: toRem(20);
+		li {
 			line-height: 135%;
-			@include adaptiveValue("font-size", 19, 12);
+			@include adaptiveValue("font-size", 16, 12);
+			span {
+				font-weight: 700;
+			}
 			a {
-				display: inline;
 				color: $blueColor;
 				@media (any-hover: hover) {
 					&:hover {
@@ -358,79 +381,68 @@ summary {
 				}
 			}
 		}
-		ul,
-		ol {
-			display: grid;
-			gap: toRem(8);
-			padding-left: toRem(20);
+	}
+	ul {
+		li {
+			list-style: disc;
+		}
+		&.nav-stat {
+			display: flex;
+			flex-wrap: wrap;
+			padding-left: 0px;
+			@include adaptiveValue("gap", 12, 8);
+			@include adaptiveValue("padding-top", 12, 5);
+			@include adaptiveValue("padding-bottom", 12, 5);
 			li {
-				line-height: 135%;
-				@include adaptiveValue("font-size", 16, 12);
-				span {
-					font-weight: 700;
-				}
+				font-weight: 600;
+				list-style: none;
+				@include adaptiveValue("font-size", 19, 12);
 				a {
-					color: $blueColor;
+					display: flex;
+					border: 1px solid #ccc;
+					border-radius: toRem(5);
+					padding: toRem(8) toRem(15);
+					background-color: $grayColor;
+					color: rgba($mainColor, 0.75);
+					transition:
+						background-color 0.3s,
+						border 0.3s,
+						color 0.3s;
 					@media (any-hover: hover) {
 						&:hover {
-							text-decoration: underline;
+							color: #fff;
+							text-decoration: none;
+							border: 1px solid $orangeColor;
+							background-color: $orangeColor;
 						}
+					}
+					@media (max-width: $mobileSmall) {
+						padding: toRem(7) toRem(10);
 					}
 				}
 			}
 		}
-		ul {
-			li {
-				list-style: disc;
-			}
-			&.nav-stat {
-				display: flex;
-				flex-wrap: wrap;
-				padding-left: 0px;
-				@include adaptiveValue("gap", 12, 8);
-				@include adaptiveValue("padding-top", 12, 5);
-				@include adaptiveValue("padding-bottom", 12, 5);
-				li {
-					font-weight: 600;
-					list-style: none;
-					@include adaptiveValue("font-size", 19, 12);
-					a {
-						display: flex;
-						border: 1px solid #ccc;
-						border-radius: toRem(5);
-						padding: toRem(8) toRem(15);
-						background-color: $grayColor;
-						color: rgba($mainColor, 0.75);
-						transition:
-							background-color 0.3s,
-							border 0.3s,
-							color 0.3s;
-						@media (any-hover: hover) {
-							&:hover {
-								color: #fff;
-								text-decoration: none;
-								border: 1px solid $orangeColor;
-								background-color: $orangeColor;
-							}
-						}
-						@media (max-width: $mobileSmall) {
-							padding: toRem(7) toRem(10);
-						}
-					}
-				}
-			}
-		}
-		strong {
-			display: flex;
-			line-height: 135%;
-			@include adaptiveValue("font-size", 19, 12);
-		}
-		.img-cnt {
-			margin: 0 auto;
-			max-width: 100%;
-			padding-top: toRem(10);
-		}
-		&--manual {
+	}
+	strong {
+		line-height: 135%;
+		display: inline-block;
+		@include adaptiveValue("font-size", 19, 12);
+	}
+	i {
+		display: block;
+		line-height: 135%;
+		@include adaptiveValue("font-size", 19, 12);
+	}
+	.img-cnt {
+		margin: 0 auto;
+		max-width: 100%;
+		padding-top: toRem(10);
+	}
+	article {
+		display: grid;
+		justify-items: start;
+		@include adaptiveValue("row-gap", 15, 8);
+		&.article-manual {
 			display: block;
 			h4,
 			h5,
@@ -439,6 +451,7 @@ summary {
 			ol,
 			ul,
 			a,
+			i,
 			strong {
 				&:not(:last-child) {
 					@include adaptiveValue("margin-bottom", 15, 8);
@@ -646,7 +659,7 @@ summary {
 			padding: toRem(5) toRem(0);
 		}
 		&.paragraph {
-			.paragraph__block {
+			article {
 				justify-items: start;
 				@include adaptiveValue("row-gap", 20, 12);
 			}

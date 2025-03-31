@@ -487,25 +487,34 @@ body::after {
   border-radius: .9375rem 0 .9375rem .9375rem
 }
 .spollers {
-  display: grid;
-  gap: 15px
+  gap: 12px;
+  display: grid
 }
 .spollers__item {
-  font-size: 1.25rem
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #eee
 }
 .spollers__title {
   width: 100%;
   cursor: default;
   text-align: left;
-  border: 1px solid #eee;
-  padding: .625rem .9375rem;
-  border-radius: .3125rem;
+  font-weight: 700;
+  list-style: none;
+  line-height: 135%;
   position: relative;
-  list-style: none
+  padding-top: .9375rem;
+  padding-right: 3.125rem;
+  padding-bottom: .9375rem;
+  transition: background-color .5s,color .5s
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
   display: none
+}
+.spollers__title._spoller-active {
+  pointer-events: none;
+  background-color: rgba(204,204,204,.65)
 }
 ._spoller-init .spollers__title {
   cursor: pointer
@@ -514,14 +523,14 @@ body::after {
 ._spoller-init .spollers__title::before {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 50%;
   background-color: #000;
   height: 2px;
   width: 15px;
-  transition: -webkit-transform .5s ease 0s;
-  transition: transform .5s ease 0s;
-  transition: transform .5s ease 0s,-webkit-transform .5s ease 0s
+  transition: background-color .5s ease 0s,-webkit-transform .5s ease 0s;
+  transition: transform .5s ease 0s,background-color .5s ease 0s;
+  transition: transform .5s ease 0s,background-color .5s ease 0s,-webkit-transform .5s ease 0s
 }
 ._spoller-init .spollers__title::before {
   -webkit-transform: translate(-75%,-50%) rotate(40deg);
@@ -538,11 +547,6 @@ body::after {
 ._spoller-init .spollers__title._spoller-active::after {
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg)
-}
-.spollers__body {
-  padding: 1.25rem;
-  border-radius: .3125rem;
-  border: 1px solid #eee
 }
 .spollers-menu {
   display: flex;
@@ -844,60 +848,59 @@ summary::marker {
 .paragraph {
   display: grid
 }
-.paragraph__block {
-  display: grid;
-  justify-items: start
-}
-.paragraph__block h3 {
+.paragraph h3 {
   font-weight: 700;
   line-height: 115%
 }
-.paragraph__block h4 {
+.paragraph h4 {
   font-weight: 700;
   line-height: 125%
 }
-.paragraph__block h5 {
+.paragraph h5 {
   font-weight: 500;
   line-height: 115%
 }
-.paragraph__block p {
+.paragraph h5 a {
+  color: #0066b3
+}
+.paragraph p {
   line-height: 135%
 }
-.paragraph__block p a {
+.paragraph p a {
   display: inline;
   color: #0066b3
 }
-.paragraph__block ol,
-.paragraph__block ul {
+.paragraph ol,
+.paragraph ul {
   display: grid;
   gap: .5rem;
   padding-left: 1.25rem
 }
-.paragraph__block ol li,
-.paragraph__block ul li {
+.paragraph ol li,
+.paragraph ul li {
   line-height: 135%
 }
-.paragraph__block ol li span,
-.paragraph__block ul li span {
+.paragraph ol li span,
+.paragraph ul li span {
   font-weight: 700
 }
-.paragraph__block ol li a,
-.paragraph__block ul li a {
+.paragraph ol li a,
+.paragraph ul li a {
   color: #0066b3
 }
-.paragraph__block ul li {
+.paragraph ul li {
   list-style: disc
 }
-.paragraph__block ul.nav-stat {
+.paragraph ul.nav-stat {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0
 }
-.paragraph__block ul.nav-stat li {
+.paragraph ul.nav-stat li {
   font-weight: 600;
   list-style: none
 }
-.paragraph__block ul.nav-stat li a {
+.paragraph ul.nav-stat li a {
   display: flex;
   border: 1px solid #ccc;
   border-radius: .3125rem;
@@ -906,16 +909,24 @@ summary::marker {
   color: rgba(0,0,0,.75);
   transition: background-color .3s,border .3s,color .3s
 }
-.paragraph__block strong {
-  display: flex;
+.paragraph strong {
+  line-height: 135%;
+  display: inline-block
+}
+.paragraph i {
+  display: block;
   line-height: 135%
 }
-.paragraph__block .img-cnt {
+.paragraph .img-cnt {
   margin: 0 auto;
   max-width: 100%;
   padding-top: .625rem
 }
-.paragraph__block--manual {
+.paragraph article {
+  display: grid;
+  justify-items: start
+}
+.paragraph article.article-manual {
   display: block
 }
 .paragraph__images {
@@ -1018,7 +1029,7 @@ summary::marker {
 .elements__paragraph {
   padding: .9375rem 0
 }
-.elements__paragraph.paragraph .paragraph__block {
+.elements__paragraph.paragraph article {
   justify-items: start
 }
 .elements__image {
@@ -1481,14 +1492,11 @@ summary::marker {
 .about__articles .articles__title {
   text-transform: uppercase
 }
-.electric__paragraph .paragraph__block.video:not(:last-child) {
+.electric__paragraph article.video:not(:last-child) {
   margin-bottom: .9375rem
 }
 .type__paragraph:not(:last-child) {
   border-bottom: 1px solid rgba(0,0,0,.34)
-}
-.protect__paragraph .paragraph__block.video {
-  box-shadow: rgba(0,0,0,.15) 0 5px 15px 0
 }
 .manual__content {
   display: grid;
@@ -1724,6 +1732,15 @@ summary::marker {
   .checkbox__text {
     font-size: 1rem
   }
+  .spollers__title {
+    font-size: 1.25rem
+  }
+  .spollers__title {
+    padding-left: 1.25rem
+  }
+  .spollers__body {
+    padding: 1.25rem
+  }
   .spollers-footer__title {
     font-size: 1.25rem
   }
@@ -1766,48 +1783,52 @@ summary::marker {
   .paragraph {
     row-gap: 1.875rem
   }
-  .paragraph__block {
-    row-gap: .9375rem
-  }
-  .paragraph__block h3 {
+  .paragraph h3 {
     font-size: 2.1875rem
   }
-  .paragraph__block h4 {
+  .paragraph h4 {
     font-size: 1.875rem
   }
-  .paragraph__block h5 {
+  .paragraph h5 {
     font-size: 1.5625rem
   }
-  .paragraph__block p {
+  .paragraph p {
     font-size: 1.1875rem
   }
-  .paragraph__block ol li,
-  .paragraph__block ul li {
+  .paragraph ol li,
+  .paragraph ul li {
     font-size: 1rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     gap: .75rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-top: .75rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-bottom: .75rem
   }
-  .paragraph__block ul.nav-stat li {
+  .paragraph ul.nav-stat li {
     font-size: 1.1875rem
   }
-  .paragraph__block strong {
+  .paragraph strong {
     font-size: 1.1875rem
   }
-  .paragraph__block--manual a:not(:last-child),
-  .paragraph__block--manual h4:not(:last-child),
-  .paragraph__block--manual h5:not(:last-child),
-  .paragraph__block--manual ol:not(:last-child),
-  .paragraph__block--manual p:not(:last-child),
-  .paragraph__block--manual strong:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child) {
+  .paragraph i {
+    font-size: 1.1875rem
+  }
+  .paragraph article {
+    row-gap: .9375rem
+  }
+  .paragraph article.article-manual a:not(:last-child),
+  .paragraph article.article-manual h4:not(:last-child),
+  .paragraph article.article-manual h5:not(:last-child),
+  .paragraph article.article-manual i:not(:last-child),
+  .paragraph article.article-manual ol:not(:last-child),
+  .paragraph article.article-manual p:not(:last-child),
+  .paragraph article.article-manual strong:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child) {
     margin-bottom: .9375rem
   }
   .paragraph__images {
@@ -1861,7 +1882,7 @@ summary::marker {
   .elements__item {
     border-radius: .9375rem
   }
-  .elements__paragraph.paragraph .paragraph__block {
+  .elements__paragraph.paragraph article {
     row-gap: 1.25rem
   }
   .actions-header__body {
@@ -2177,6 +2198,15 @@ summary::marker {
   .checkbox__text {
     font-size: .875rem
   }
+  .spollers__title {
+    font-size: .875rem
+  }
+  .spollers__title {
+    padding-left: .625rem
+  }
+  .spollers__body {
+    padding: .625rem
+  }
   .spollers-footer__title {
     font-size: 1rem
   }
@@ -2219,48 +2249,52 @@ summary::marker {
   .paragraph {
     row-gap: 1.0625rem
   }
-  .paragraph__block {
-    row-gap: .5rem
-  }
-  .paragraph__block h3 {
+  .paragraph h3 {
     font-size: 1.125rem
   }
-  .paragraph__block h4 {
+  .paragraph h4 {
     font-size: 1rem
   }
-  .paragraph__block h5 {
+  .paragraph h5 {
     font-size: .875rem
   }
-  .paragraph__block p {
+  .paragraph p {
     font-size: .75rem
   }
-  .paragraph__block ol li,
-  .paragraph__block ul li {
+  .paragraph ol li,
+  .paragraph ul li {
     font-size: .75rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     gap: .5rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-top: .3125rem
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-bottom: .3125rem
   }
-  .paragraph__block ul.nav-stat li {
+  .paragraph ul.nav-stat li {
     font-size: .75rem
   }
-  .paragraph__block strong {
+  .paragraph strong {
     font-size: .75rem
   }
-  .paragraph__block--manual a:not(:last-child),
-  .paragraph__block--manual h4:not(:last-child),
-  .paragraph__block--manual h5:not(:last-child),
-  .paragraph__block--manual ol:not(:last-child),
-  .paragraph__block--manual p:not(:last-child),
-  .paragraph__block--manual strong:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child) {
+  .paragraph i {
+    font-size: .75rem
+  }
+  .paragraph article {
+    row-gap: .5rem
+  }
+  .paragraph article.article-manual a:not(:last-child),
+  .paragraph article.article-manual h4:not(:last-child),
+  .paragraph article.article-manual h5:not(:last-child),
+  .paragraph article.article-manual i:not(:last-child),
+  .paragraph article.article-manual ol:not(:last-child),
+  .paragraph article.article-manual p:not(:last-child),
+  .paragraph article.article-manual strong:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child) {
     margin-bottom: .5rem
   }
   .paragraph__images {
@@ -2314,7 +2348,7 @@ summary::marker {
   .elements__item {
     border-radius: .5rem
   }
-  .elements__paragraph.paragraph .paragraph__block {
+  .elements__paragraph.paragraph article {
     row-gap: .75rem
   }
   .header__body {
@@ -2604,6 +2638,10 @@ summary::marker {
   .video-popup__body.video {
     border-radius: .5rem 0 .5rem .5rem
   }
+  ._spoller-init .spollers__title::after,
+  ._spoller-init .spollers__title::before {
+    width: 10px
+  }
   .spollers-menu {
     row-gap: 0;
     -webkit-column-gap: 0;
@@ -2732,7 +2770,7 @@ summary::marker {
   .float-img {
     max-width: 100%
   }
-  .paragraph__block ul.nav-stat li a {
+  .paragraph ul.nav-stat li a {
     padding: .4375rem .625rem
   }
   .recom__slider:not(:last-child) {
@@ -2793,6 +2831,15 @@ summary::marker {
   .checkbox__text {
     font-size: clamp(.875rem ,.8369047619rem + .1904761905vw ,1rem)
   }
+  .spollers__title {
+    font-size: clamp(.875rem ,.7607142857rem + .5714285714vw ,1.25rem)
+  }
+  .spollers__title {
+    padding-left: clamp(.625rem ,.4345238095rem + .9523809524vw ,1.25rem)
+  }
+  .spollers__body {
+    padding: clamp(.625rem ,.4345238095rem + .9523809524vw ,1.25rem)
+  }
   .spollers-footer__title {
     font-size: clamp(1rem ,.9238095238rem + .380952381vw ,1.25rem)
   }
@@ -2835,48 +2882,52 @@ summary::marker {
   .paragraph {
     row-gap: clamp(1.0625rem ,.8148809524rem + 1.2380952381vw ,1.875rem)
   }
-  .paragraph__block {
-    row-gap: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
-  }
-  .paragraph__block h3 {
+  .paragraph h3 {
     font-size: clamp(1.125rem ,.8011904762rem + 1.619047619vw ,2.1875rem)
   }
-  .paragraph__block h4 {
+  .paragraph h4 {
     font-size: clamp(1rem ,.7333333333rem + 1.3333333333vw ,1.875rem)
   }
-  .paragraph__block h5 {
+  .paragraph h5 {
     font-size: clamp(.875rem ,.6654761905rem + 1.0476190476vw ,1.5625rem)
   }
-  .paragraph__block p {
+  .paragraph p {
     font-size: clamp(.75rem ,.6166666667rem + .6666666667vw ,1.1875rem)
   }
-  .paragraph__block ol li,
-  .paragraph__block ul li {
+  .paragraph ol li,
+  .paragraph ul li {
     font-size: clamp(.75rem ,.6738095238rem + .380952381vw ,1rem)
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     gap: clamp(.5rem ,.4238095238rem + .380952381vw ,.75rem)
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-top: clamp(.3125rem ,.1791666667rem + .6666666667vw ,.75rem)
   }
-  .paragraph__block ul.nav-stat {
+  .paragraph ul.nav-stat {
     padding-bottom: clamp(.3125rem ,.1791666667rem + .6666666667vw ,.75rem)
   }
-  .paragraph__block ul.nav-stat li {
+  .paragraph ul.nav-stat li {
     font-size: clamp(.75rem ,.6166666667rem + .6666666667vw ,1.1875rem)
   }
-  .paragraph__block strong {
+  .paragraph strong {
     font-size: clamp(.75rem ,.6166666667rem + .6666666667vw ,1.1875rem)
   }
-  .paragraph__block--manual a:not(:last-child),
-  .paragraph__block--manual h4:not(:last-child),
-  .paragraph__block--manual h5:not(:last-child),
-  .paragraph__block--manual ol:not(:last-child),
-  .paragraph__block--manual p:not(:last-child),
-  .paragraph__block--manual strong:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child),
-  .paragraph__block--manual ul:not(:last-child) {
+  .paragraph i {
+    font-size: clamp(.75rem ,.6166666667rem + .6666666667vw ,1.1875rem)
+  }
+  .paragraph article {
+    row-gap: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
+  }
+  .paragraph article.article-manual a:not(:last-child),
+  .paragraph article.article-manual h4:not(:last-child),
+  .paragraph article.article-manual h5:not(:last-child),
+  .paragraph article.article-manual i:not(:last-child),
+  .paragraph article.article-manual ol:not(:last-child),
+  .paragraph article.article-manual p:not(:last-child),
+  .paragraph article.article-manual strong:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child),
+  .paragraph article.article-manual ul:not(:last-child) {
     margin-bottom: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
   }
   .paragraph__images {
@@ -2930,7 +2981,7 @@ summary::marker {
   .elements__item {
     border-radius: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
   }
-  .elements__paragraph.paragraph .paragraph__block {
+  .elements__paragraph.paragraph article {
     row-gap: clamp(.75rem ,.5976190476rem + .7619047619vw ,1.25rem)
   }
   .actions-header__body {
@@ -3168,6 +3219,14 @@ summary::marker {
   .popup__close:hover {
     background-color: #f36e22
   }
+  .spollers__title:hover {
+    color: #fff;
+    background-color: rgba(0,102,179,.75)
+  }
+  .spollers__title:hover::after,
+  .spollers__title:hover::before {
+    background-color: #fff
+  }
   .spollers-menu__link:hover {
     background-color: #f36e22
   }
@@ -3184,14 +3243,17 @@ summary::marker {
   .breadcrumbs__link:hover {
     text-decoration: underline
   }
-  .paragraph__block p a:hover {
+  .paragraph h5 a:hover {
     text-decoration: underline
   }
-  .paragraph__block ol li a:hover,
-  .paragraph__block ul li a:hover {
+  .paragraph p a:hover {
     text-decoration: underline
   }
-  .paragraph__block ul.nav-stat li a:hover {
+  .paragraph ol li a:hover,
+  .paragraph ul li a:hover {
+    text-decoration: underline
+  }
+  .paragraph ul.nav-stat li a:hover {
     color: #fff;
     text-decoration: none;
     border: 1px solid #f36e22;
