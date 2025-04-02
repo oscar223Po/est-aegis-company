@@ -1768,6 +1768,9 @@ summary::marker {
   .title--mb:not(:last-child) {
     margin-bottom: 1.875rem
   }
+  .title--mbl:not(:last-child) {
+    margin-bottom: 3.125rem
+  }
   .img--br {
     border-radius: .9375rem
   }
@@ -2020,9 +2023,6 @@ summary::marker {
   .item-charact__list {
     font-size: 1rem
   }
-  .paper__title:not(:last-child) {
-    margin-bottom: 3.125rem
-  }
   .usage__paragraph:not(:last-child) {
     margin-bottom: 2.5rem
   }
@@ -2043,9 +2043,6 @@ summary::marker {
   }
   .manual__content {
     padding-top: 1.25rem
-  }
-  .resource__title.title--mb:not(:last-child) {
-    margin-bottom: 3.125rem
   }
   .technical__body {
     gap: 3.75rem
@@ -2233,6 +2230,9 @@ summary::marker {
   }
   .title--mb:not(:last-child) {
     margin-bottom: .9375rem
+  }
+  .title--mbl:not(:last-child) {
+    margin-bottom: 1.5625rem
   }
   .img--br {
     border-radius: .5rem
@@ -2486,9 +2486,6 @@ summary::marker {
   .item-charact__list {
     font-size: .875rem
   }
-  .paper__title:not(:last-child) {
-    margin-bottom: 1.5625rem
-  }
   .usage__paragraph:not(:last-child) {
     margin-bottom: 1.25rem
   }
@@ -2509,9 +2506,6 @@ summary::marker {
   }
   .manual__content {
     padding-top: .625rem
-  }
-  .resource__title.title--mb:not(:last-child) {
-    margin-bottom: 1.25rem
   }
   .technical__body {
     gap: 1.5625rem
@@ -2867,6 +2861,9 @@ summary::marker {
   .title--mb:not(:last-child) {
     margin-bottom: clamp(.9375rem ,.6517857143rem + 1.4285714286vw ,1.875rem)
   }
+  .title--mbl:not(:last-child) {
+    margin-bottom: clamp(1.5625rem ,1.0863095238rem + 2.380952381vw ,3.125rem)
+  }
   .img--br {
     border-radius: clamp(.5rem ,.3666666667rem + .6666666667vw ,.9375rem)
   }
@@ -3113,9 +3110,6 @@ summary::marker {
   .item-charact__list {
     font-size: clamp(.875rem ,.8369047619rem + .1904761905vw ,1rem)
   }
-  .paper__title:not(:last-child) {
-    margin-bottom: clamp(1.5625rem ,1.0863095238rem + 2.380952381vw ,3.125rem)
-  }
   .usage__paragraph:not(:last-child) {
     margin-bottom: clamp(1.25rem ,.869047619rem + 1.9047619048vw ,2.5rem)
   }
@@ -3136,9 +3130,6 @@ summary::marker {
   }
   .manual__content {
     padding-top: clamp(.625rem ,.4345238095rem + .9523809524vw ,1.25rem)
-  }
-  .resource__title.title--mb:not(:last-child) {
-    margin-bottom: clamp(1.25rem ,.6785714286rem + 2.8571428571vw ,3.125rem)
   }
   .technical__body {
     gap: clamp(1.5625rem ,.8958333333rem + 3.3333333333vw ,3.75rem)
@@ -3266,6 +3257,10 @@ summary::marker {
   .articles__item:hover .articles__text,
   .articles__item:hover .articles__title {
     color: #fff
+  }
+  .articles__item:hover .articles__image img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
   }
   .elements__item:hover {
     box-shadow: rgba(0,0,0,.1) 0 20px 25px -5px,rgba(0,0,0,.04) 0 10px 10px -5px

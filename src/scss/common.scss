@@ -173,6 +173,11 @@ summary {
 			@include adaptiveValue("margin-bottom", 30, 15);
 		}
 	}
+	&--mbl {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 50, 25);
+		}
+	}
 }
 // Image
 .img {
@@ -545,6 +550,11 @@ summary {
 				.articles__title,
 				.articles__text {
 					color: #fff;
+				}
+				.articles__image {
+					img {
+						transform: scale(1.05);
+					}
 				}
 			}
 		}

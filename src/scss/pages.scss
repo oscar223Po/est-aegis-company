@@ -106,15 +106,6 @@
 		}
 	}
 }
-// Paper
-.paper {
-	// .paper__title
-	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 50, 25);
-		}
-	}
-}
 // About
 .about {
 	// .about__body
@@ -186,17 +177,6 @@
 		@include adaptiveValue("padding-top", 20, 10);
 		@media (min-width: $mobile) {
 			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-}
-// Resource
-.resource {
-	// .resource__title
-	&__title {
-		&.title--mb {
-			&:not(:last-child) {
-				@include adaptiveValue("margin-bottom", 50, 20);
-			}
 		}
 	}
 }
