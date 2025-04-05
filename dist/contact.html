@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Electro Static Technology - ManualPage</title>
+	<title>Electro Static Technology - ContactPage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="Краткое описание страницы, которое будет отображаться в поисковой выдаче.">
@@ -170,69 +170,239 @@
 				<div class="breadcrumbs__container">
 					<ul class="breadcrumbs__list">
 						<li class="breadcrumbs__item"><a href="home.html" class="breadcrumbs__link">Главная</a></li>
-						<li class="breadcrumbs__item"><a href="protect.html" class="breadcrumbs__link">Защита подшипников</a></li>
 						<li class="breadcrumbs__item">
-							<div class="breadcrumbs__current">Напряжение вала и токи подшипников</div>
+							<div class="breadcrumbs__current">Cвязаться с нами</div>
 						</li>
 					</ul>
 				</div>
 			</nav>
-			<!-- [Manual] -->
-			<section class="manual extra-pb">
-				<div class="manual__container">
-					<h3 class="manual__title title title--mb">Напряжение вала и токи подшипников</h3>
-					<div class="manual__paragraph paragraph">
-						<article>
-							<p>Что вызывает напряжение на валу в двигателях, работающих от частотно-регулируемых приводов (ЧРП)? Как проверить подшипниковые токи? Получите ответы, необходимые для понимания того, почему это происходит, и как увидеть это самостоятельно.</p>
-							<ul class="nav-stat">
-								<li><a href="" data-goto=".goto-01">Источник токов подшипников</a></li>
-								<li><a href="" data-goto=".goto-02">Емкостный ток EDM</a></li>
-								<li><a href="" data-goto=".goto-03">Высокочастотный циркулирующий ток</a></li>
-								<li><a href="" data-goto=".goto-04">Как проверить напряжение на валу</a></li>
-							</ul>
-						</article>
-						<article class="article-manual goto-01">
-							<h5>Источник подшипниковых токов</h5>
-							<p><img src="img/protect/01.webp" alt="Image" class="float-img"> Токи подшипников — это высокочастотные токи, которые вызваны напряжением на валу двигателя, которое вызывает разрядный ток через подшипники двигателя. Это редко является проблемой для электродвигателей, работающих от сетевого напряжения. Но частотно-регулируемые приводы (ЧРП) выдают широтно-импульсное модулированное напряжение, что может быть большой проблемой для двигателей с питанием от инвертора.</p>
-							<p>При работе от ЧРП питание двигателя представляет собой серию положительных и отрицательных импульсов вместо плавной волны. Поэтому входное напряжение никогда не сбалансировано, поскольку напряжение либо большое и положительное, либо большое и отрицательное, с быстрым переключением между положительным и отрицательным состояниями во всех трех фазах.</p>
-							<p>Среднее напряжение между тремя фазами называется синфазным напряжением. Обычно оно имеет форму волны «прямоугольной волны» или «6 ступеней».</p>
-							<p>Два разрушительных типа тока подшипников в хорошо заземленных двигателях с питанием от ЧРП — это емкостный ток EDM и высокочастотный циркулирующий ток.</p>
-						</article>
-						<article class="goto-02">
-							<h5>Емкостный ток EDM</h5>
-							<p>Электродвигатель работает как конденсатор. Синфазное напряжение от VFD создает емкостно-связанное напряжение на роторе и валу двигателя. Это напряжение вала разряжается посредством дуги через подшипники на раму. Эта дуга содержит емкостный ток EDM.</p>
-							<p>Напряжения вала можно измерить с помощью цифрового осциллографа AEGIS Shaft Voltage Tester и наконечника зонда AEGIS SVP Shaft Voltage Probe. Разряды выглядят как очень быстрые (вертикальные линии) изменения напряжения обратно к базовому уровню.</p>
-							<p>Эти разрядные дуги, которые могут возникать десятки тысяч раз в секунду, ухудшают смазку подшипника и вызывают электроэрозионную обработку (EDM): тысячи микроскопических ямок в дорожке качения подшипника. Эти ямки и испорченная смазка вызывают повышенное трение и шум, исходящий от двигателя. В конечном итоге на подшипнике могут появиться полосы, называемые канавками, и еще больше шума. К тому времени, как станет слышен стук, выход подшипника из строя станет неизбежным.</p>
-						</article>
-						<article class="article-manual goto-03">
-							<h5>Высокочастотный циркулирующий ток</h5>
-							<p>Высокочастотный ток на выходе VFD перемещается емкостно к корпусу двигателя, а затем проходит через корпус в поисках земли. Когда этот ток движется через корпус, он создает высокочастотный магнитный поток внутри двигателя. Этот поток, в свою очередь, индуцирует высокочастотное сквозное напряжение на валу. В больших двигателях, более 100 л. с./75 кВт, это сквозное напряжение вала достаточно велико, чтобы управлять высокочастотным циркулирующим током через подшипники.</p>
-							<p><img src="img/protect/04.webp" alt="Image" class="float-img"> Этот циркулирующий ток перемещается от вала к раме через один подшипник и от рамы к валу через другой. Конечным результатом является ток, циркулирующий между валом и рамой двигателя, повреждающий оба подшипника одновременно.</p>
-							<p>Хотя высокочастотный поток присутствует во всех двигателях на приводах, поток обычно достаточно силен только для того, чтобы вызвать циркулирующий ток в более крупных двигателях, более 100 л. с./75 кВт. С другой стороны, емкостное напряжение на валу присутствует во всех двигателях, работающих от частотно-регулируемых приводов, поэтому все двигатели на приводах восприимчивы к емкостному току EDM.</p>
-						</article>
-						<article class="article-manual goto-04">
-							<h5>Как проверить напряжение на валу</h5>
-							<p><img src="img/protect/04.webp" alt="Image" class="float-img"> Измерение напряжения на валу двигателей с частотным преобразователем дает вам ценную информацию для определения потенциального риска повреждения подшипников от электрических разрядов. Мы рекомендуем провести обследование и <a href="">документирование показаний напряжения вала</a> с использованием <a href="">Цифровой осциллограф-тестер напряжения вала AEGIS.</a></p>
-							<strong>Заземляющие кольца обеспечивают:</strong>
-							<ol>
-								<li>Высокий размах синфазного напряжения</li>
-								<li>Высокоамплитудная модель разряда EDM</li>
-								<li>Низкоамплитудная модель разряда напряжения</li>
-							</ol>
-							<p>Узнайте больше о том, как определить типы напряжения на валу и найти правильное решение для их снижения, в нашем справочнике.</p>
-						</article>
-					</div>
-					<div class="manual__elements elements">
-						<div class="elements__item">
-							<div class="elements__paragraph paragraph">
-								<article>
-									<h5>Узнайте больше</h5>
-									<p>Справочник по защите подшипников AEGIS расскажет вам, как происходит повреждение подшипников и какие шаги необходимы для предотвращения этого повреждения. Загрузите свою копию и узнайте, как применять лучшие практики защиты подшипников в новых и отремонтированных двигателях, тестировать двигатели в процессе эксплуатации и проверять поврежденные двигатели. Наше руководство доступно на нескольких языках, поэтому вы можете получить доступ к этой ценной информации, где бы вы ни находились.</p>
-									<a target="_blank" href="type-01.html" class="button">Скачать Справочник по защите подшипников</a>
-								</article>
-							</div>
-							<div class="elements__image img img--br shad"><img src="img/protect/04.webp" alt="Image"></div>
+			<!-- [Contact] -->
+			<section class="contact extra-pb">
+				<div class="contact__container">
+					<h3 class="contact__title title title--mb">Cвязаться с нами</h3>
+					<div class="contact__body">
+						<div class="contact__content paragraph">
+							<article>
+								<h5>Спасибо вам за проявленный интерес.</h5>
+								<p>Мы с нетерпением ждем вашего звонка. У вас есть проект, который вы хотели бы обсудить, или вопросы? Сообщите нам подробности, и мы свяжемся с вами в течение 48 часов.</p>
+							</article>
+							<article>
+								<h5>Электростатическая технология | AEGIS</h5>
+								<ul>
+									<li>Уинтербрук-роуд, 31</li>
+									<li>Механик Фоллс, ME 04256</li>
+								</ul>
+								<ul class="nav-stat">
+									<li><a href="tel:+72079985143">+7 207-998-5143</a></li>
+									<li><a href="mailto:example@gmail.com">Электронная почта</a></li>
+								</ul>
+							</article>
 						</div>
+						<form action="#" class="contact__form form">
+							<fieldset class="form__fieldset">
+								<legend style="display: none;"></legend>
+								<label class="form__label">
+									<span class="form__span">Email</span>
+									<input data-required="email" autocomplete="off" type="email" name="form[]" data-error="Пожалуйста, введите свой Email" class="form__input input">
+								</label>
+								<div class="form__labels">
+									<label class="form__label">
+										<span class="form__span">Имя</span>
+										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, введите свое Имя" class="form__input input">
+									</label>
+									<label class="form__label">
+										<span class="form__span">Фамилия</span>
+										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, введите свою Фамилию" class="form__input input">
+									</label>
+								</div>
+								<div class="form__labels">
+									<label class="form__label">
+										<span class="form__span">Должность</span>
+										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, заполните обязательное поле" class="form__input input">
+									</label>
+									<label class="form__label">
+										<span class="form__span">Наименование компании</span>
+										<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Пожалуйста, заполните обязательное поле" class="form__input input">
+									</label>
+								</div>
+								<div class="form__label">
+									<span class="form__span">Страна</span>
+									<select name="form[]" data-class-modif="form">
+										<option value="" selected disabled>Выберите вариант</option>
+										<option value="1">Afghanistan</option>
+										<option value="2">Albania</option>
+										<option value="3">Algeria</option>
+										<option value="4">Andorra</option>
+										<option value="5">Angola</option>
+										<option value="6">Antigua and Barbuda</option>
+										<option value="7">Argentina</option>
+										<option value="8">Armenia</option>
+										<option value="9">Australia</option>
+										<option value="10">Austria</option>
+										<option value="11">Azerbaijan</option>
+										<option value="12">Bahamas</option>
+										<option value="13">Bahrain</option>
+										<option value="14">Bangladesh</option>
+										<option value="15">Barbados</option>
+										<option value="16">Belarus</option>
+										<option value="17">Belgium</option>
+										<option value="18">Belize</option>
+										<option value="19">Benin</option>
+										<option value="20">Bhutan</option>
+										<option value="21">Bolivia</option>
+										<option value="22">Bosnia and Herzegovina</option>
+										<option value="23">Botswana</option>
+										<option value="24">Brazil</option>
+										<option value="25">Brunei</option>
+										<option value="26">Bulgaria</option>
+										<option value="27">Burkina Faso</option>
+										<option value="28">Burundi</option>
+										<option value="29">Cabo Verde</option>
+										<option value="30">Cambodia</option>
+										<option value="31">Cameroon</option>
+										<option value="32">Canada</option>
+										<option value="33">Central African Republic</option>
+										<option value="34">Chad</option>
+										<option value="35">Chile</option>
+										<option value="36">China</option>
+										<option value="37">Colombia</option>
+										<option value="38">Comoros</option>
+										<option value="39">Congo</option>
+										<option value="40">Costa Rica</option>
+										<option value="41">Croatia</option>
+										<option value="42">Cuba</option>
+										<option value="43">Cyprus</option>
+										<option value="44">Czechia</option>
+										<option value="45">Democratic Republic of the Congo</option>
+										<option value="46">Denmark</option>
+										<option value="47">Djibouti</option>
+										<option value="48">Dominica</option>
+										<option value="49">Dominican Republic</option>
+										<option value="50">Ecuador</option>
+										<option value="51">Egypt</option>
+										<option value="52">El Salvador</option>
+										<option value="53">Equatorial Guinea</option>
+										<option value="54">Eritrea</option>
+										<option value="55">Estonia</option>
+										<option value="56">Eswatini</option>
+										<option value="57">Ethiopia</option>
+										<option value="58">Fiji</option>
+										<option value="59">Finland</option>
+										<option value="60">France</option>
+										<option value="61">Gabon</option>
+										<option value="62">Gambia</option>
+										<option value="63">Georgia</option>
+										<option value="64">Germany</option>
+										<option value="65">Ghana</option>
+										<option value="66">Greece</option>
+										<option value="67">Grenada</option>
+										<option value="68">Guatemala</option>
+										<option value="69">Guinea</option>
+										<option value="70">Guinea-Bissau</option>
+										<option value="71">Guyana</option>
+										<option value="72">Haiti</option>
+										<option value="73">Honduras</option>
+										<option value="74">Hungary</option>
+										<option value="75">Iceland</option>
+										<option value="76">India</option>
+										<option value="77">Indonesia</option>
+										<option value="78">Iran</option>
+										<option value="79">Iraq</option>
+										<option value="80">Ireland</option>
+										<option value="81">Israel</option>
+										<option value="82">Italy</option>
+										<option value="83">Jamaica</option>
+										<option value="84">Japan</option>
+										<option value="85">Jordan</option>
+										<option value="86">Kazakhstan</option>
+										<option value="87">Kenya</option>
+										<option value="88">Kiribati</option>
+										<option value="89">Kuwait</option>
+										<option value="90">Kyrgyzstan</option>
+										<option value="91">Laos</option>
+										<option value="92">Latvia</option>
+										<option value="93">Lebanon</option>
+										<option value="94">Lesotho</option>
+										<option value="95">Liberia</option>
+										<option value="96">Libya</option>
+										<option value="97">Liechtenstein</option>
+										<option value="98">Lithuania</option>
+										<option value="99">Luxembourg</option>
+										<option value="100">Madagascar</option>
+										<option value="101">Malawi</option>
+										<option value="102">Malaysia</option>
+										<option value="103">Maldives</option>
+										<option value="104">Mali</option>
+										<option value="105">Malta</option>
+										<option value="106">Marshall Islands</option>
+										<option value="107">Mauritania</option>
+										<option value="108">Mauritius</option>
+										<option value="109">Mexico</option>
+										<option value="110">Moldova</option>
+										<option value="111">Monaco</option>
+										<option value="112">Mongolia</option>
+										<option value="113">Montenegro</option>
+										<option value="114">Morocco</option>
+										<option value="115">Mozambique</option>
+										<option value="116">Myanmar</option>
+										<option value="117">Namibia</option>
+										<option value="118">Nauru</option>
+										<option value="119">Nepal</option>
+										<option value="120">Netherlands</option>
+										<option value="121">New Zealand</option>
+										<option value="122">Nicaragua</option>
+										<option value="123">Niger</option>
+										<option value="124">Nigeria</option>
+										<option value="125">North Korea</option>
+										<option value="126">North Macedonia</option>
+										<option value="127">Norway</option>
+										<option value="128">Oman</option>
+										<option value="129">Pakistan</option>
+										<option value="130">Palau</option>
+										<option value="131">Panama</option>
+										<option value="132">Papua New Guinea</option>
+										<option value="133">Paraguay</option>
+										<option value="134">Peru</option>
+										<option value="135">Philippines</option>
+										<option value="136">Poland</option>
+										<option value="137">Portugal</option>
+										<option value="138">Qatar</option>
+										<option value="139">Romania</option>
+										<option value="140">Russia</option>
+										<option value="141">Saudi Arabia</option>
+										<option value="142">Serbia</option>
+										<option value="143">Singapore</option>
+										<option value="144">Slovakia</option>
+										<option value="145">Slovenia</option>
+										<option value="146">South Africa</option>
+										<option value="147">South Korea</option>
+										<option value="148">Spain</option>
+										<option value="149">Sri Lanka</option>
+										<option value="150">Sweden</option>
+										<option value="151">Switzerland</option>
+										<option value="152">Thailand</option>
+										<option value="153">Turkey</option>
+										<option value="154">Ukraine</option>
+										<option value="155">United Kingdom</option>
+										<option value="156">United States</option>
+										<option value="157">Vietnam</option>
+										<option value="158">Virgin Islands, British</option>
+										<option value="159">Virgin Islands, U.S.</option>
+										<option value="160">Wallis and Futuna</option>
+										<option value="161">Western Sahara</option>
+										<option value="162">Yemen</option>
+										<option value="163">Zambia</option>
+										<option value="164">Zimbabwe</option>
+									</select>
+								</div>
+								<label class="form__label">
+									<span class="form__span">Вопрос или комментарий</span>
+									<textarea data-required="text" autocomplete="off" name="form[]" data-error="Пожалуйста, заполните обязательное поле" class="input"></textarea>
+								</label>
+								<p>EST-AEGIS needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="">Privacy Policy.</a></p>
+							</fieldset>
+							<button type="submit" class="form__button button">Отправить</button>
+						</form>
 					</div>
 				</div>
 			</section>

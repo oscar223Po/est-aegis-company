@@ -38,8 +38,9 @@ textarea {
 		opacity: 0;
 	}
 }
-
 textarea.input {
-	resize: none;
-	padding: 0px 0px;
+	padding: 15px;
+	resize: vertical;
+	min-height: toRem(100);
+	max-height: toRem(250);
 }
