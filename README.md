@@ -1,4 +1,4 @@
-# 🪜 Aegis Electro Static Technology – Shaft Grounding for Motor Bearing Protection
+# 🧩 Aegis Electro Static Technology — Shaft Grounding for Motor Bearing Protection
 
 Protect your electric motor bearings with advanced shaft grounding rings. Juvtek K27 shaft grounding rings are trusted in thousands of motors across Russia and the CIS, preventing costly bearing damage and unplanned downtime. Electromotors driven by variable frequency drives (VFDs) are susceptible to shaft voltage buildup, which can lead to premature bearing failure. The innovative design of the Juvtek K27 rings offers reliable electrostatic discharge protection, extending motor life and ensuring uninterrupted operation.
 
